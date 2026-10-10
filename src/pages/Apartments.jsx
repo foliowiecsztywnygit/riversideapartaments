@@ -5,17 +5,17 @@ const Apartments = () => {
   return (
     <div>
       <Hero 
-        title="Nasze Domki Wakacyjne" 
-        subtitle="160m² luksusu z widokiem na Tatry" 
+        title="Nasze Apartamenty" 
+        subtitle="Komfort i nowoczesność nad rzeką Sołą w Oświęcimiu" 
         isHome={false} 
       />
 
-      <section className="py-32 bg-[#EBE7DF]">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-serif text-foreground mb-6">Trzy Niezależne Domy</h2>
+            <h2 className="text-4xl font-serif text-foreground mb-6">Wybierz Wymarzony Apartament</h2>
             <p className="text-gray-600 font-light leading-relaxed">
-              Oferujemy zakwaterowanie w 3 luksusowych domkach 14-osobowych. Każdy dom o powierzchni 160m² to miejsce dla osób ceniących sobie ciszę i spokój, a jednocześnie chcących cieszyć się atrakcjami Podhala.
+              Zadbaliśmy o to, aby nasze wnętrza były nowoczesne, wygodne i w pełni wyposażone. Oferujemy różne opcje zakwaterowania dopasowane do potrzeb osób podróżujących solo, w parach oraz małych grup.
             </p>
           </div>
 
@@ -23,18 +23,18 @@ const Apartments = () => {
             {/* Feature 1 */}
             <div className="flex flex-col md:flex-row items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/wnetrze-2.webp" alt="Sypialnia" className="w-full h-[400px] object-cover shadow-xl" />
+                <img src="/assets/images/IMG_3809-Edytuj.jpg" alt="Sypialnia" className="w-full h-[400px] object-cover shadow-xl" />
               </div>
               <div className="flex-1">
-                <h3 className="text-3xl font-serif text-foreground mb-6">5 Komfortowych Sypialni</h3>
+                <h3 className="text-3xl font-serif text-foreground mb-6">Komfortowe Miejsca do Spania</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  W każdym domku znajduje się 5 sypialni komfortowo rozłożonych na wyższych kondygnacjach. Dwie z nich posiadają prywatne balkony z widokiem na panoramę gór.
+                  W każdym z apartamentów przygotowaliśmy komfortowe łóżka z wygodnymi materacami, które pozwolą zregenerować siły. W apartamentach znajdują się również miejsca na przechowywanie bagażu.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• Łóżka jedno- i dwuosobowe</li>
-                  <li>• Dodatkowe rozkładane kanapy</li>
-                  <li>• Przestrzeń na przechowywanie rzeczy osobistych</li>
-                  <li>• Świeża pościel w cenie</li>
+                  <li>• Podwójne i pojedyncze łóżka</li>
+                  <li>• Szafy na garderobę</li>
+                  <li>• Świeża, wysokiej jakości pościel</li>
+                  <li>• Klimatyzacja w sypialniach/salonach</li>
                 </ul>
               </div>
             </div>
@@ -42,17 +42,17 @@ const Apartments = () => {
             {/* Feature 2 */}
             <div className="flex flex-col md:flex-row-reverse items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/wnetrze-7.webp" alt="Kuchnia" className="w-full h-[400px] object-cover shadow-xl" />
+                <img src="/assets/images/IMG_3830-HDR-Edytuj.jpg" alt="Kuchnia" className="w-full h-[400px] object-cover shadow-xl" />
               </div>
               <div className="flex-1">
-                <h3 className="text-3xl font-serif text-foreground mb-6">W Pełni Wyposażona Kuchnia i Jadalnia</h3>
+                <h3 className="text-3xl font-serif text-foreground mb-6">Aneksy Kuchenne</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Serce domu to przestronna kuchnia płynnie łącząca się z jadalnią. Duży stół do biesiadowania to idealne miejsce na wspólne posiłki dla wszystkich 14 gości.
+                  Większość apartamentów posiada własne aneksy kuchenne lub dedykowane części jadalniane, w których można samodzielnie przygotować posiłki o dowolnej porze.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• Płyta indukcyjna (4-palnikowa) i zmywarka</li>
-                  <li>• Duża lodówka, mikrofala</li>
-                  <li>• Ekspres do kawy, toster i opiekacz</li>
+                  <li>• Płyta grzewcza, piekarnik, lodówka</li>
+                  <li>• Niezbędne naczynia, sztućce, garnki i patelnie</li>
+                  <li>• Czajnik elektryczny</li>
                 </ul>
               </div>
             </div>
@@ -60,17 +60,17 @@ const Apartments = () => {
             {/* Feature 3 */}
             <div className="flex flex-col md:flex-row items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/wnetrze-13.webp" alt="Salon" className="w-full h-[400px] object-cover shadow-xl" />
+                <img src="/assets/images/IMG_3754-Edytuj.jpg" alt="Salon" className="w-full h-[400px] object-cover shadow-xl" />
               </div>
               <div className="flex-1">
-                <h3 className="text-3xl font-serif text-foreground mb-6">Salon z Kominkiem</h3>
+                <h3 className="text-3xl font-serif text-foreground mb-6">Część Wypoczynkowa</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Jasny, słoneczny salon to idealne miejsce na długie wieczory. Wyposażony w nastrojowy kominek, ogromne i wygodne kanapy oraz duży telewizor z ofertą kanałów.
+                  Apartamenty o podwyższonym standardzie wyposażone są w specjalne strefy wypoczynkowe, idealne na relaks po dniu pełnym zwiedzania Oświęcimia i okolic.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• Ogrzewanie podłogowe na części parteru i w łazienkach (elektryczne piecyki konwekcyjne w reszcie domu)</li>
-                  <li>• Darmowe szybkie Wi-Fi</li>
-                  <li>• Bezpośrednie wyjście na taras widokowy</li>
+                  <li>• Telewizory z płaskim ekranem</li>
+                  <li>• Szybki i bezpłatny internet Wi-Fi</li>
+                  <li>• Zestawy do parzenia kawy i herbaty</li>
                 </ul>
               </div>
             </div>
@@ -78,16 +78,18 @@ const Apartments = () => {
             {/* Feature 4 */}
             <div className="flex flex-col md:flex-row-reverse items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/wnetrze-4.webp" alt="Łazienka" className="w-full h-[400px] object-cover shadow-xl" />
+                <img src="/assets/images/IMG_3735.jpg" alt="Łazienka" className="w-full h-[400px] object-cover shadow-xl" />
               </div>
               <div className="flex-1">
-                <h3 className="text-3xl font-serif text-foreground mb-6">2 Łazienki</h3>
+                <h3 className="text-3xl font-serif text-foreground mb-6">Nowoczesne Łazienki</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Dla pełnego komfortu dużej grupy, każdy domek dysponuje dwiema niezależnymi łazienkami z komfortowymi kabinami prysznicowymi oraz ogrzewaniem podłogowym.
+                  Do Państwa dyspozycji oddajemy nowoczesne łazienki utrzymane w nienagannej czystości. Niektóre apartamenty wyposażone są dodatkowo w pralkę, która może okazać się niezwykle przydatna podczas dłuższych pobytów.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• Zestaw świeżych ręczników dla każdego gościa</li>
-                  <li>• Nowoczesne i sterylnie czyste wykończenie</li>
+                  <li>• Przestronne kabiny prysznicowe</li>
+                  <li>• Bezpłatny zestaw kosmetyków</li>
+                  <li>• Świeże ręczniki i suszarka do włosów</li>
+                  <li>• Wybrane apartamenty z pralką</li>
                 </ul>
               </div>
             </div>

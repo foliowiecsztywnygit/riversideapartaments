@@ -148,9 +148,9 @@ const BookingPage = () => {
     : [startParam ? parseISO(startParam) : null, endParam ? parseISO(endParam) : null].filter(Boolean);
 
   const cabinDetails = {
-    1: { img: "dom1-1.jpg", desc: "Z prywatnym jacuzzi i altaną. Obejmuje strefę wypoczynku z grillem oraz plac zabaw." },
-    2: { img: "wnetrze-7.webp", desc: "Z przestronnym tarasem lub altaną, strefą wypoczynku z grillem i placem zabaw." },
-    3: { img: "wnetrze-18.webp", desc: "Z altaną lub dużym tarasem, strefą wypoczynku z grillem i placem zabaw." }
+    1: { img: "IMG_3735.jpg", desc: "Z komfortowym łóżkiem, aneksem kuchennym i łazienką." },
+    2: { img: "IMG_3746.jpg", desc: "Przestronny apartament z częścią wypoczynkową." },
+    3: { img: "IMG_3785-HDR-Edytuj.jpg", desc: "Z widokiem, idealny dla par ceniących wygodę." }
   };
 
   return (
@@ -170,7 +170,7 @@ const BookingPage = () => {
 
         {!loading && (
           <div className="mb-16 bg-white p-8 rounded-xl shadow-xl border border-gray-100">
-            <h2 className="text-2xl font-serif text-foreground mb-2 text-center">Ogólna dostępność osady</h2>
+            <h2 className="text-2xl font-serif text-foreground mb-2 text-center">Ogólna dostępność apartamentów</h2>
             <p className="text-gray-500 text-sm text-center mb-6">Kliknij w kalendarzu, aby wybrać nowy termin pobytu (przyjazd i wyjazd).</p>
             
             <div className="flex justify-center mb-6">
@@ -188,7 +188,7 @@ const BookingPage = () => {
             <div className="flex items-center justify-center gap-8 mt-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-red-50 border border-red-200"></div>
-                <span className="text-gray-600 font-medium">Brak wolnych domków</span>
+                <span className="text-gray-600 font-medium">Brak wolnych apartamentów</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-gray-50 border border-gray-200"></div>
@@ -210,10 +210,10 @@ const BookingPage = () => {
             
             {/* Cabins Selection */}
             <div>
-              <h2 className="text-2xl font-serif text-foreground mb-6">Dostępne domki</h2>
+              <h2 className="text-2xl font-serif text-foreground mb-6">Dostępne apartamenty</h2>
               {availableCabins.length === 0 ? (
                 <div className="bg-red-50 border border-red-200 p-6 rounded-xl text-red-800">
-                  Niestety w wybranym terminie nie mamy wolnych domków. Spróbuj wybrać inny termin powyżej.
+                  Niestety w wybranym terminie nie mamy wolnych apartamentów. Spróbuj wybrać inny termin powyżej.
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -233,12 +233,12 @@ const BookingPage = () => {
                         <img src={`/assets/images/${details.img}`} alt={cabin.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="p-4 sm:w-2/3 flex flex-col justify-center">
-                        <h3 className="text-xl text-foreground font-serif font-medium mb-1">{cabin.name}</h3>
+                        <h3 className="text-xl text-foreground font-serif font-medium mb-1">{cabin.name.replace('Domek', 'Apartament')}</h3>
                         <p className="text-gray-500 text-xs font-light mb-2">{details.desc}</p>
                         <ul className="text-[11px] text-gray-500 space-y-1 mt-auto">
-                          <li>• Do 14 gości (160m²)</li>
-                          <li>• 5 sypialni, 2 łazienki</li>
-                          <li>• Salon z kominkiem</li>
+                          <li>• Prywatna łazienka</li>
+                          <li>• Klimatyzacja, Wi-Fi</li>
+                          <li>• Telewizor z płaskim ekranem</li>
                         </ul>
                       </div>
                     </div>
@@ -258,13 +258,13 @@ const BookingPage = () => {
                      Jesteś na smartfonie? Najszybsza rezerwacja odbywa się przez SMS. Przygotowaliśmy dla Ciebie gotową wiadomość z terminem!
                    </p>
                    <a 
-                     href={`sms:+48503142398?body=${encodeURIComponent(`Dzień dobry, chciał(a)bym zarezerwować ${selectedCabin ? `Domek Wakacyjny N°${selectedCabin}` : 'domek'} w terminie od ${displayDate(startParam)} do ${displayDate(endParam)} dla ${guestCount} osób (w tym ${childrenUnder3} dzieci do 3 lat, ${childrenOver3} dzieci pow. 3 lat). Czy termin jest nadal aktualny?`)}`}
+                     href={`sms:+48793942793?body=${encodeURIComponent(`Dzień dobry, chciał(a)bym zarezerwować ${selectedCabin ? `Apartament N°${selectedCabin}` : 'apartament'} w terminie od ${displayDate(startParam)} do ${displayDate(endParam)} dla ${guestCount} osób (w tym ${childrenUnder3} dzieci do 3 lat, ${childrenOver3} dzieci pow. 3 lat). Czy termin jest nadal aktualny?`)}`}
                      className={`w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg transition-colors text-sm uppercase tracking-widest ${!selectedCabin ? 'opacity-50 pointer-events-none' : ''}`}
                    >
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                      Wyślij SMS z zapytaniem
                    </a>
-                   {!selectedCabin && <p className="text-xs text-red-500 mt-4 text-center">Wybierz domek z listy, aby wysłać zapytanie.</p>}
+                   {!selectedCabin && <p className="text-xs text-red-500 mt-4 text-center">Wybierz apartament z listy, aby wysłać zapytanie.</p>}
                 </div>
 
                 {/* Desktop Form */}

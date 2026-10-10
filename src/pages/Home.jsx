@@ -5,88 +5,88 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const reviews = [
     {
-      author: "Agnieszka Kasprzak",
+      author: "Piotr",
       rating: 5,
-      date: "rok temu",
-      text: "Było naprawdę super 🤩klimatyczny kominek, dwie łazienki, 5 sypialni, które spokojnie pomieszczą 12/14 osób. Brakuje jedynie balii/jacuzzi i zamykanego ogrodzenia. W pełni wyposażone..."
+      date: "niedawno",
+      text: "Świetna lokalizacja tuż obok bulwarów nad Sołą. Apartament jest bardzo nowocześnie urządzony, czysty i posiada wszystko, co potrzebne. Dodatkowym plusem jest winda i klimatyzacja."
     },
     {
-      author: "Мар'яна Палига",
+      author: "Anna",
       rating: 5,
-      date: "rok temu",
-      text: "Bardzo ładne, kameralne miejsce. 🥰 Super widoki, bardzo blisko do Term Chochołowskich, oprócz tego dom posiada wszystkie niezbędne wyposażenie. Osobno chciałam..."
+      date: "niedawno",
+      text: "Bardzo ładne i czyste miejsce. Świetny kontakt z obsługą. Blisko do Rynku i Zamku, a spacer do muzeum Auschwitz zajmuje zaledwie chwilę samochodem. Zdecydowanie polecam!"
     },
     {
-      author: "Anna Muras",
+      author: "Kamil",
       rating: 5,
-      date: "rok temu",
-      text: "Domek jest klimatyczny, przytulny, jest czyściutko, dobrze wyposażony. Bardzo słoneczny salon, wygodna kanapa😍. Piekny widok na góry! Bardzo blisko do stoków..."
+      date: "niedawno",
+      text: "Apartament przewyższył moje oczekiwania. Bardzo wygodne łóżko, świetnie wyposażony aneks kuchenny, bardzo czysto. Idealne miejsce na krótki lub dłuższy pobyt w Oświęcimiu."
     }
   ];
 
   return (
     <div>
       <Hero 
-        title="Luksusowe Domki Wakacyjne" 
-        subtitle="W Dzianiszu koło Zakopanego oferujemy domy z widokiem na góry" 
+        title="River Side Apartments" 
+        subtitle="Nowoczesne i komfortowe apartamenty w sercu Oświęcimia, obok rzeki Soły." 
         isHome={true} 
       />
 
       {/* About Section */}
       <section className="py-32 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 mt-12">
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-4xl font-serif text-foreground mb-6">Osada N°54 – Twoje miejsce na wypoczynek</h2>
+          <h2 className="text-4xl font-serif text-foreground mb-6">River Side Apartments – Twój przystanek w Oświęcimiu</h2>
           <p className="text-gray-600 mb-6 font-light leading-relaxed">
-            Cicha i urokliwa miejscowość, w której znajdują się nasze domki, oddalona jest zaledwie 9 km od Zakopanego, 2 km od stacji narciarskiej Witów Ski i 2 km od Term Chochołowskich, co czyni ją doskonałą bazą wypadową do licznych atrakcji Podhala. Cisza i spokój pozwolą na spędzenie wyjątkowych chwil w gronie najbliższych.
+            Nasz obiekt usytuowany jest w centrum Oświęcimia, przy malowniczych Bulwarach nad rzeką Sołą. Nowoczesne apartamenty gwarantują wygodę i niezależność, oferując bliskość do najważniejszych punktów miasta – Zaledwie kilka minut od Rynku Głównego, Zamku i Muzeum Żydowskiego.
           </p>
           <p className="text-gray-600 font-light leading-relaxed mb-6">
-            Oferujemy zakwaterowanie w luksusowych domkach 14-osobowych o powierzchni 160m² każdy. Każdy z domów jest częściowo ogrodzony i posiada własną strefę wypoczynku z grillem oraz niewielki plac zabaw dla dzieci. Dwa domy posiadają dodatkowo altany, a trzeci dysponuje dużym, przestronnym tarasem. Wnętrza są przytulnie urządzone, posiadają wygodne meble, a my zapewniamy ręczniki i pościel.
+            Każdy z apartamentów jest w pełni wyposażony, posiada nowoczesną łazienkę, klimatyzację oraz szybkie bezprzewodowe połączenie Wi-Fi. Do Państwa dyspozycji przygotowaliśmy w pełni wyposażone aneksy kuchenne. W budynku znajduje się winda oraz parking podziemny, a zameldowanie przebiega szybko i wygodnie w formie online (bezobsługowy check-in).
           </p>
           <p className="text-xs uppercase tracking-widest font-bold text-accent">
-            Najbliższe lotnisko: Kraków-Balice (83 km)
+            Energylandia (Zator) – zaledwie 15 min samochodem
           </p>
         </div>
         <div className="flex-1 w-full h-[500px] relative">
           <img 
-            src="/assets/images/wnetrze-13.webp" 
-            alt="Wnętrze luksusowego domku" 
+            src="/assets/images/IMG_3754-Edytuj.jpg" 
+            alt="Wnętrze River Side Apartments" 
             className="w-full h-full object-cover shadow-lg"
           />
         </div>
       </section>
 
-      {/* Houses Grid Section */}
-      <section className="py-24 bg-[#EBE7DF]">
+      {/* Apartments Grid Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-16 text-center md:text-left">
-            <h2 className="text-4xl font-serif text-foreground mb-4">Nasze Domki</h2>
-            <p className="text-gray-600 font-light">Do Twojej dyspozycji oddajemy 3 niezależne, w pełni wyposażone domki 14-osobowe.</p>
+            <h2 className="text-4xl font-serif text-foreground mb-4">Nasze Apartamenty</h2>
+            <p className="text-gray-600 font-light">Oferujemy nowocześnie urządzone apartamenty, które zapewnią komfort podczas pobytu w Oświęcimiu.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { id: 1, img: "dom1-1.jpg", desc: "Z prywatnym jacuzzi i altaną. Obejmuje strefę wypoczynku z grillem oraz plac zabaw." },
-              { id: 2, img: "wnetrze-7.webp", desc: "Z przestronnym tarasem lub altaną, strefą wypoczynku z grillem i placem zabaw." },
-              { id: 3, img: "wnetrze-18.webp", desc: "Z altaną lub dużym tarasem, strefą wypoczynku z grillem i placem zabaw." }
+              { id: 1, title: "Apartament Standard", img: "IMG_3735.jpg", desc: "Z komfortowym łóżkiem, aneksem kuchennym i łazienką z prysznicem." },
+              { id: 2, title: "Apartament Superior", img: "IMG_3746.jpg", desc: "Przestronny apartament z częścią wypoczynkową i w pełni wyposażoną kuchnią." },
+              { id: 3, title: "Apartament z Widokiem", img: "IMG_3785-HDR-Edytuj.jpg", desc: "Z pięknym widokiem na okolicę, idealny dla par ceniących wygodę." }
             ].map(domek => (
               <div key={domek.id} className="bg-white shadow-md group overflow-hidden flex flex-col h-full">
                 <div className="relative h-64 overflow-hidden">
-                  <img src={`/assets/images/${domek.img}`} alt={`Domek ${domek.id}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={`/assets/images/${domek.img}`} alt={domek.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest">
                     REZERWUJ
                   </div>
                 </div>
                 <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="text-xl font-serif text-foreground mb-4">Domek Wakacyjny<br/>N°{domek.id}</h3>
+                  <h3 className="text-xl font-serif text-foreground mb-4">{domek.title}</h3>
                   <p className="text-sm text-gray-600 font-light mb-4 flex-grow">{domek.desc}</p>
                   <ul className="text-sm text-gray-500 mb-6 space-y-1">
-                    <li>• Do 14 gości (160m²)</li>
-                    <li>• 5 sypialni (część z balkonem)</li>
-                    <li>• 2 łazienki z prysznicem</li>
-                    <li>• Salon z kominkiem i dużą kuchnią</li>
+                    <li>• Parking podziemny</li>
+                    <li>• Bezobsługowy online check-in</li>
+                    <li>• Bezpłatne Wi-Fi i klimatyzacja</li>
+                    <li>• Prywatna łazienka</li>
                   </ul>
                   <div className="flex justify-between items-end border-t border-gray-100 pt-4 mt-auto">
-                    <p className="text-xs text-gray-500 font-medium">Ogrzewanie podłogowe<br/>Parking w cenie</p>
+                    <p className="text-xs text-gray-500 font-medium">Dostęp do windy<br/>Wyposażony aneks</p>
                     <Link to="/domki" className="text-accent text-xs font-bold uppercase tracking-widest hover:text-[#b88c45]">Więcej</Link>
                   </div>
                 </div>
@@ -98,55 +98,72 @@ const Home = () => {
 
       {/* Equipment Details Section */}
       <section className="py-24 text-center px-4">
-        <h2 className="text-3xl font-serif text-foreground mb-8">Wyposażenie najwyższej klasy</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto text-left">
+        <h2 className="text-3xl font-serif text-foreground mb-8">Udogodnienia i Wyposażenie</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
           <div className="p-6 bg-white border border-gray-100 shadow-sm">
-            <h3 className="text-xl font-serif text-accent mb-4">Kuchnia i Salon</h3>
+            <h3 className="text-xl font-serif text-accent mb-4">W pełni wyposażona kuchnia</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              Przestronna kuchnia z dużą jadalnią posiada wszystko, czego potrzebujesz: lodówkę, zmywarkę, mikrofalę, 4-palnikową płytę indukcyjną, ekspres do kawy, toster i opiekacz. W salonie czeka kominek, wygodne kanapy i duży telewizor.
+              Większość naszych apartamentów dysponuje w pełni wyposażonym aneksem kuchennym zawierającym kuchenkę, piekarnik, lodówkę, czajnik oraz niezbędne przybory, co daje pełną niezależność.
             </p>
           </div>
           <div className="p-6 bg-white border border-gray-100 shadow-sm">
-            <h3 className="text-xl font-serif text-accent mb-4">Komfortowe Sypialnie</h3>
+            <h3 className="text-xl font-serif text-accent mb-4">Klimatyzacja i Winda</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              5 sypialni rozmieszczono na wyższych kondygnacjach (dwie z balkonami). Wyposażone są w wygodne łóżka (jedno- i dwuosobowe), rozkładane kanapy i miejsce na przechowywanie.
+              Zapewniamy odpowiednią temperaturę o każdej porze roku dzięki nowoczesnemu systemowi klimatyzacji. W budynku dostępna jest winda ułatwiająca dotarcie z bagażami na wyższe piętra.
             </p>
           </div>
           <div className="p-6 bg-white border border-gray-100 shadow-sm">
-            <h3 className="text-xl font-serif text-accent mb-4">Ogrzewanie i Ciepło</h3>
+            <h3 className="text-xl font-serif text-accent mb-4">Prywatna Łazienka</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              W łazienkach i częściowo na parterze zamontowano ogrzewanie podłogowe. Dodatkowe ciepło zapewniają elektryczne piecyki konwekcyjne oraz nastrojowy kominek w salonie.
+              Każdy apartament posiada nowoczesną łazienkę z prysznicem, w której przygotowaliśmy dla Państwa bezpłatny zestaw kosmetyków, świeże ręczniki oraz pralkę w niektórych jednostkach.
+            </p>
+          </div>
+          <div className="p-6 bg-white border border-gray-100 shadow-sm">
+            <h3 className="text-xl font-serif text-accent mb-4">Parking i Check-in</h3>
+            <p className="text-sm text-gray-600 font-light leading-relaxed">
+              Do dyspozycji gości oddajemy wygodny parking podziemny. Proces meldowania jest w pełni zautomatyzowany – poprzez system online check-in otrzymują Państwo dostęp do apartamentu.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Google Reviews */}
-      <section className="py-24 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <div className="mb-12 flex flex-col items-center">
-            <h2 className="text-4xl font-serif mb-4">Co mówią nasi Goście?</h2>
-            <div className="flex items-center space-x-4 bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm mt-4 border border-white/20">
-              <span className="text-3xl font-bold text-accent">4.9</span>
-              <div className="flex flex-col items-start">
-                <div className="flex text-accent text-sm">
-                  ★★★★★
+      {/* Reviews - Redesigned with Glassmorphism */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/images/bulwary.jpg" alt="Rzeka Soła" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+          <div className="mb-16 flex flex-col items-center">
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 drop-shadow-md">Co mówią nasi Goście?</h2>
+            <div className="flex items-center space-x-6 bg-white/10 px-8 py-4 rounded-2xl backdrop-blur-md border border-white/20 shadow-2xl">
+              <span className="text-4xl font-bold text-accent drop-shadow-sm">9.5</span>
+              <div className="flex flex-col items-start border-l border-white/20 pl-6">
+                <div className="flex text-accent text-sm mb-1 tracking-widest">
+                  WYJĄTKOWY
                 </div>
-                <span className="text-xs text-gray-300 font-medium tracking-widest uppercase">Na podstawie 97 opinii w Google</span>
+                <span className="text-xs text-gray-200 font-medium tracking-widest uppercase">Z Booking.com</span>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left mt-12">
             {reviews.map((review, i) => (
-              <div key={i} className="bg-white/5 p-8 border border-white/10 hover:border-accent/50 transition-colors">
-                <div className="flex text-accent text-sm mb-4">★★★★★</div>
-                <p className="text-gray-300 font-light italic mb-6 leading-relaxed">
+              <div key={i} className="group bg-white/10 backdrop-blur-md p-10 rounded-2xl border border-white/10 hover:bg-white/20 hover:border-white/30 hover:-translate-y-2 transition-all duration-500 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-6 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-12 h-12 text-accent" fill="currentColor" viewBox="0 0 32 32">
+                    <path d="M10 8c-4.4 0-8 3.6-8 8v8h8v-8H6c0-2.2 1.8-4 4-4V8zm18 0c-4.4 0-8 3.6-8 8v8h8v-8h-4c0-2.2 1.8-4 4-4V8z"/>
+                  </svg>
+                </div>
+                <div className="flex text-accent text-sm mb-6">★★★★★</div>
+                <p className="text-gray-100 font-light italic mb-8 leading-relaxed text-lg relative z-10">
                   "{review.text}"
                 </p>
-                <div className="flex justify-between items-center text-sm">
-                  <span className="font-bold">{review.author}</span>
-                  <span className="text-gray-500">{review.date}</span>
+                <div className="flex justify-between items-center text-sm border-t border-white/10 pt-6 mt-auto">
+                  <span className="font-bold text-white tracking-widest uppercase">{review.author}</span>
+                  <span className="text-gray-300 font-medium">{review.date}</span>
                 </div>
               </div>
             ))}
@@ -161,28 +178,33 @@ const Home = () => {
           
           <div className="space-y-6">
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Ilu gości może zatrzymać się w obiekcie?</h3>
-              <p className="text-gray-600 font-light">Domek udostępnia jedną dużą opcję zakwaterowania, która pomieści aż 14 gości.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Gdzie dokładnie znajdują się apartamenty?</h3>
+              <p className="text-gray-600 font-light">River Side Apartments znajdują się przy ulicy Bulwary 1 w Oświęcimiu, tuż obok rzeki Soły, niedaleko hotelu Hampton by Hilton i krótki spacer od Rynku Głównego.</p>
             </div>
             
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Ile sypialni znajduje się w obiekcie?</h3>
-              <p className="text-gray-600 font-light">W każdym domu wakacyjnym zapewniono 5 oddzielnych sypialni oraz 2 łazienki z prysznicem. Dwie sypialnie posiadają własne balkony.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Czy obiekt posiada klimatyzację i darmowe Wi-Fi?</h3>
+              <p className="text-gray-600 font-light">Tak, wszystkie apartamenty są klimatyzowane i zapewniają dostęp do bezpłatnego, szybkiego internetu Wi-Fi.</p>
             </div>
             
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Jakie są godziny zameldowania i wymeldowania?</h3>
-              <p className="text-gray-600 font-light">Zameldowanie w obiekcie rozpoczyna się o godzinie 15:00 (do 22:00), a wymeldować się można do godziny 10:00 (od 08:00). Prosimy o poinformowanie nas z wyprzedzeniem o planowanej godzinie przyjazdu.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Czy w budynku znajduje się winda?</h3>
+              <p className="text-gray-600 font-light">Tak, do dyspozycji naszych Gości jest winda w budynku, dzięki czemu przemieszczanie się z bagażami nie stanowi problemu.</p>
             </div>
 
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Czy obiekt jest przyjazny dzieciom?</h3>
-              <p className="text-gray-600 font-light">Tak, obiekt jest bardzo często rezerwowany przez rodziny! Dzieci w każdym wieku są mile widziane. Łóżeczka dla dzieci (0-2 lata) są dostępne bezpłatnie na życzenie. Dzieci od 6. roku życia podlegają standardowym opłatom.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Jak daleko jest do Muzeum Auschwitz-Birkenau?</h3>
+              <p className="text-gray-600 font-light">Nasze apartamenty oddalone są od Muzeum Auschwitz-Birkenau o około 3,5 kilometra, co pozwala na dojazd samochodem w kilka minut.</p>
             </div>
             
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Czy w obiekcie dostępny jest balkon lub taras?</h3>
-              <p className="text-gray-600 font-light">Tak, każdy z naszych domków wakacyjnych posiada taras oraz wybrane sypialnie posiadają balkony.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Czy dostępne są ręczniki i pościel?</h3>
+              <p className="text-gray-600 font-light">Tak, wszystkie apartamenty posiadają świeżą pościel i zestawy ręczników dla każdego zarejestrowanego Gościa. Zapewniamy również bezpłatne kosmetyki hotelowe.</p>
+            </div>
+
+            <div className="pb-6">
+              <h3 className="text-lg font-bold text-foreground mb-2">Jak wygląda kwestia parkingu i zameldowania?</h3>
+              <p className="text-gray-600 font-light">Dla naszych Gości udostępniamy parking podziemny. Zameldowanie odbywa się w pełni bezobsługowo w formie online poprzez nasz system rezerwacyjny.</p>
             </div>
           </div>
         </div>

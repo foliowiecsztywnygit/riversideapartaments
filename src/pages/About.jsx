@@ -4,22 +4,22 @@ import Hero from '../components/Hero';
 const About = () => {
   const reviews = [
     {
-      author: "Agnieszka Kasprzak",
+      author: "Piotr",
       rating: 5,
-      date: "rok temu",
-      text: "Było naprawdę super 🤩klimatyczny kominek, dwie łazienki, 5 sypialni, które spokojnie pomieszczą 12/14 osób. Brakuje jedynie balii/jacuzzi i zamykanego ogrodzenia. W pełni wyposażone, czysto i bardzo dobry kontakt. Polecam z całego serca ❤️"
+      date: "niedawno",
+      text: "Świetna lokalizacja tuż obok bulwarów nad Sołą. Apartament jest bardzo nowocześnie urządzony, czysty i posiada wszystko, co potrzebne. Dodatkowym plusem jest winda i klimatyzacja."
     },
     {
-      author: "Мар'яна Палига",
+      author: "Anna",
       rating: 5,
-      date: "rok temu",
-      text: "Bardzo ładne, kameralne miejsce. 🥰 Super widoki, bardzo blisko do Term Chochołowskich, oprócz tego dom posiada wszystkie niezbędne wyposażenie. Osobno chciałam podziękować za możliwość pobytu z psem, dla nas to bardzo ważne, dlatego polecamy w 100 procentach 🫶🏻"
+      date: "niedawno",
+      text: "Bardzo ładne i czyste miejsce. Świetny kontakt z obsługą. Blisko do Rynku i Zamku, a spacer do muzeum Auschwitz zajmuje zaledwie chwilę samochodem. Zdecydowanie polecam!"
     },
     {
-      author: "Anna Muras",
+      author: "Kamil",
       rating: 5,
-      date: "rok temu",
-      text: "Domek jest klimatyczny, przytulny, jest czyściutko, dobrze wyposażony. Bardzo słoneczny salon, wygodna kanapa😍. Piekny widok na góry! Bardzo blisko do stoków narciarskich (2 km Szymoszkowa). Miła obsługa. Na pewno wrócimy tu za rok! 💛"
+      date: "niedawno",
+      text: "Apartament przewyższył moje oczekiwania. Bardzo wygodne łóżko, świetnie wyposażony aneks kuchenny, bardzo czysto. Idealne miejsce na krótki lub dłuższy pobyt w Oświęcimiu."
     }
   ];
 
@@ -27,43 +27,43 @@ const About = () => {
     <div>
       <Hero 
         title="O nas" 
-        subtitle="Twoje miejsce na ziemi" 
+        subtitle="Odkryj komfort w sercu Oświęcimia" 
         isHome={false} 
       />
 
       <section className="py-32 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         <div className="flex-1 w-full h-[600px] relative">
           <img 
-            src="/assets/images/wnetrze-13.webp" 
-            alt="Osada Dzianisz N°54" 
+            src="/assets/images/IMG_3785-HDR-Edytuj.jpg" 
+            alt="Wnętrze apartamentów" 
             className="w-full h-full object-cover shadow-2xl"
           />
         </div>
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-4xl font-serif text-foreground mb-6">Misja i Spokój</h2>
+          <h2 className="text-4xl font-serif text-foreground mb-6">Wygoda i Niezależność</h2>
           <p className="text-gray-600 mb-6 font-light leading-relaxed">
-            Osada N°54 to miejsce, które chcielibyśmy oddać do Państwa dyspozycji na czas wypoczynku. Stworzyliśmy przestrzeń dla osób ceniących sobie ciszę i spokój, a jednocześnie chcących cieszyć się atrakcjami, jakie oferuje całe Podhale.
+            River Side Apartments to odpowiedź na potrzeby turystów i gości biznesowych, poszukujących w Oświęcimiu miejsca nowoczesnego, czystego i dającego pełną swobodę. Nasze apartamenty to przestrzeń, w której każdy detal został starannie przemyślany.
           </p>
           <p className="text-gray-600 font-light leading-relaxed mb-12">
-            Zadbaliśmy o każdy najmniejszy detal, by Nasi goście czuli się u nas swobodnie i absolutnie komfortowo. Każdy z domków to 160m² luksusu przygotowanego z myślą o spędzeniu wyjątkowych chwil w gronie przyjaciół i rodziny.
+            Obiekt zlokalizowany jest obok hotelu Hampton by Hilton, a od Rynku Głównego w Oświęcimiu dzieli go krótki spacer malowniczymi alejkami. To wspaniały punkt wypadowy do zwiedzania najważniejszych punktów w regionie i wypoczynku nad rzeką Sołą.
           </p>
           
           <div className="grid grid-cols-2 gap-8 border-t border-gray-200 pt-12">
             <div>
-              <span className="block text-4xl font-serif text-accent mb-2">9 km</span>
-              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Od Zakopanego</span>
+              <span className="block text-4xl font-serif text-accent mb-2">2 min</span>
+              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Spacerem do Rynku</span>
             </div>
             <div>
-              <span className="block text-4xl font-serif text-accent mb-2">2 km</span>
-              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Od Term Chochołowskich</span>
+              <span className="block text-4xl font-serif text-accent mb-2">0 m</span>
+              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Od rzeki Soły</span>
             </div>
             <div>
-              <span className="block text-4xl font-serif text-accent mb-2">2 km</span>
-              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Od Stacji Witów Ski</span>
+              <span className="block text-4xl font-serif text-accent mb-2">3.5 km</span>
+              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Do Muzeum Auschwitz</span>
             </div>
             <div>
-              <span className="block text-4xl font-serif text-accent mb-2">83 km</span>
-              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Lotnisko Kraków-Balice</span>
+              <span className="block text-4xl font-serif text-accent mb-2">17 km</span>
+              <span className="text-xs uppercase tracking-widest text-gray-500 font-bold">Do Energylandii (Zator)</span>
             </div>
           </div>
         </div>
@@ -75,12 +75,12 @@ const About = () => {
           <div className="mb-16">
             <h2 className="text-4xl font-serif mb-6">Opinie naszych Gości</h2>
             <div className="inline-flex items-center space-x-6 bg-white/10 px-8 py-4 rounded-full border border-white/20">
-              <span className="text-5xl font-bold text-accent">4.9</span>
+              <span className="text-5xl font-bold text-accent">9.5</span>
               <div className="flex flex-col items-start">
                 <div className="flex text-accent text-xl mb-1">
                   ★★★★★
                 </div>
-                <span className="text-sm text-gray-300 font-medium tracking-widest uppercase">Z Google (97 opinii)</span>
+                <span className="text-sm text-gray-300 font-medium tracking-widest uppercase">Z Booking.com (42 opinie)</span>
               </div>
             </div>
           </div>

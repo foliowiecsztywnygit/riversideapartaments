@@ -34,7 +34,7 @@ const Rules = () => {
           <div>
             <h3 className="text-2xl font-serif text-foreground mb-4 border-b border-gray-200 pb-2">Zasady dotyczące dzieci</h3>
             <p className="text-gray-600 font-light mb-4">
-              Nasze domki wakacyjne są miejscem przyjaznym rodzinom. Dzieci w każdym wieku są mile widziane.
+              Nasze apartamenty są miejscem przyjaznym rodzinom. Dzieci w każdym wieku są mile widziane.
             </p>
             <ul className="text-sm text-gray-500 space-y-2 list-disc list-inside ml-2">
               <li><strong>0 - 2 lata:</strong> Łóżeczko dziecięce udostępniamy bezpłatnie na życzenie (możliwość skorzystania zależy od dostępności). Dodatkowe łóżka nie są dostępne.</li>
@@ -49,7 +49,7 @@ const Rules = () => {
               Doskonale rozumiemy, że psy to część rodziny (co potwierdzają nasze opinie!). Jesteśmy obiektem przyjaznym zwierzętom.
             </p>
             <p className="text-sm text-gray-500 bg-[#EBE7DF] p-4 rounded-md">
-              <strong>Ważna informacja:</strong> Teren osady nie posiada zamkniętego, szczelnego ogrodzenia (wynika to z regionalnych uwarunkowań). Prosimy mieć to na uwadze przyjeżdżając ze swoimi pupilami.
+              <strong>Ważna informacja:</strong> Budynek znajduje się w centrum Oświęcimia przy bulwarach rzeki Soły.
             </p>
           </div>
 

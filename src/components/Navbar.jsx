@@ -30,12 +30,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <img 
-              src="/assets/images/logo.png" 
-              alt="Osada Dzianisz N°54" 
-              className="h-28 md:h-36 w-auto object-contain transform scale-150 origin-left logo-filter" 
-            />
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <span className="text-white text-xl font-serif font-bold tracking-wider hidden md:block">RIVER SIDE</span>
+            <span className="text-white text-lg font-serif font-bold tracking-wider md:hidden">RIVER SIDE</span>
           </Link>
           
           {/* Desktop Menu */}

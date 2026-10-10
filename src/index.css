@@ -3,10 +3,10 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-background: #F3EFE9;
-  --color-foreground: #2A2A2A;
-  --color-accent: #CFA055;
-  --color-footer: #222222;
+  --color-background: #F5F7F8;
+  --color-foreground: #1A202C;
+  --color-accent: #B39268;
+  --color-footer: #151A24;
   --font-sans: "Montserrat", sans-serif;
   --font-serif: "Playfair Display", serif;
 }

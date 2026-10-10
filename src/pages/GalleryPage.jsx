@@ -7,30 +7,15 @@ const GalleryPage = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const images = [
-    // Zewnątrz - Dron
-    ...Array.from({ length: 7 }, (_, i) => ({
-      src: `/assets/images/zewnatrz-dron-${i + 1}.webp`,
-      category: 'zewnatrz',
-      alt: `Widok z drona ${i + 1}`
-    })),
-    // Z zewnątrz zima/wieczór
-    ...Array.from({ length: 11 }, (_, i) => ({
-      src: `/assets/images/zewnatrz-zima-wieczor-${i + 1}.webp`,
-      category: 'zima',
-      alt: `Zima i wieczór ${i + 1}`
-    })),
-    // Nowe zdjęcia Domek I
-    ...Array.from({ length: 4 }, (_, i) => ({
-      src: `/assets/images/dom1-${i + 1}.jpg`,
-      category: 'wnetrza',
-      alt: `Domek 1 - Nowe zdjęcie ${i + 1}`
-    })),
-    // Wnętrza
-    ...Array.from({ length: 36 }, (_, i) => ({
-      src: `/assets/images/wnetrze-${i + 1}.webp`,
-      category: 'wnetrza',
-      alt: `Wnętrze domku ${i + 1}`
-    }))
+    { src: '/assets/images/IMG_3735.jpg', category: 'wnetrza', alt: 'River Side Apartments - Apartament' },
+    { src: '/assets/images/IMG_3746.jpg', category: 'wnetrza', alt: 'River Side Apartments - Wnętrze' },
+    { src: '/assets/images/IMG_3754-Edytuj.jpg', category: 'wnetrza', alt: 'River Side Apartments - Salon' },
+    { src: '/assets/images/IMG_3785-HDR-Edytuj.jpg', category: 'wnetrza', alt: 'River Side Apartments - Pokój' },
+    { src: '/assets/images/IMG_3809-Edytuj.jpg', category: 'wnetrza', alt: 'River Side Apartments - Sypialnia' },
+    { src: '/assets/images/IMG_3830-HDR-Edytuj.jpg', category: 'wnetrza', alt: 'River Side Apartments - Aneks' },
+    { src: '/assets/images/bulwary.jpg', category: 'otoczenie', alt: 'Bulwary nad Sołą' },
+    { src: '/assets/images/bulwary1.jpeg', category: 'otoczenie', alt: 'Okolica' },
+    { src: '/assets/images/bulwary2.jpeg', category: 'otoczenie', alt: 'Rzeka Soła' }
   ];
 
   const filteredImages = filter === 'wszystkie' ? images : images.filter(img => img.category === filter);
@@ -58,7 +43,7 @@ const GalleryPage = () => {
     <div>
       <Hero 
         title="Galeria" 
-        subtitle="Odkryj Osadę Dzianisz N°54 na zdjęciach" 
+        subtitle="Zobacz River Side Apartments na zdjęciach" 
         isHome={false} 
       />
 
@@ -70,8 +55,7 @@ const GalleryPage = () => {
             {[
               { id: 'wszystkie', label: 'Wszystkie' },
               { id: 'wnetrza', label: 'Wnętrza' },
-              { id: 'zewnatrz', label: 'Z Drona' },
-              { id: 'zima', label: 'Zima i Wieczór' }
+              { id: 'otoczenie', label: 'Otoczenie' }
             ].map(cat => (
               <button
                 key={cat.id}

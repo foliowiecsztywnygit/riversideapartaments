@@ -10,7 +10,7 @@ const Contact = () => {
     const checkin = searchParams.get('checkin');
     const checkout = searchParams.get('checkout');
     if (checkin && checkout) {
-      setMessage(`Dzień dobry, potrzebuję noclegu w Osadzie Dzianisz N°54 pomiędzy ${checkin} a ${checkout}. Czy mają Państwo wolny termin?`);
+      setMessage(`Dzień dobry, potrzebuję noclegu w River Side Apartments pomiędzy ${checkin} a ${checkout}. Czy mają Państwo wolny termin?`);
     }
   }, [searchParams]);
 
@@ -18,7 +18,7 @@ const Contact = () => {
     <div>
       <Hero 
         title="Kontakt" 
-        subtitle="Zarezerwuj swój pobyt i zapytaj o szczegóły" 
+        subtitle="Skontaktuj się z nami i zarezerwuj pobyt" 
         isHome={false} 
       />
 
@@ -26,9 +26,9 @@ const Contact = () => {
         
         {/* Contact Info */}
         <div className="flex-1">
-          <h2 className="text-4xl font-serif text-foreground mb-8">Porozmawiajmy</h2>
+          <h2 className="text-4xl font-serif text-foreground mb-8">Jesteśmy do Twojej dyspozycji</h2>
           <p className="text-gray-600 font-light leading-relaxed mb-12">
-            Jeśli masz pytania dotyczące pobytu, wolnych terminów lub specyficznego wyposażenia domków, jesteśmy do Twojej dyspozycji. 
+            Z przyjemnością odpowiemy na wszystkie pytania i pomożemy dobrać apartament najbardziej odpowiadający Państwa potrzebom.
           </p>
 
           <div className="space-y-8">
@@ -39,9 +39,9 @@ const Contact = () => {
               <div>
                 <h3 className="font-bold text-foreground text-lg">Adres</h3>
                 <p className="text-gray-600 font-light mt-1">
-                  Osada Dzianisz N°54<br/>
-                  ul. Kurierów Tatrzańskich 47<br/>
-                  34-514 Dzianisz
+                  River Side Apartments<br/>
+                  Bulwary 1<br/>
+                  32-600 Oświęcim
                 </p>
               </div>
             </div>
@@ -52,7 +52,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground text-lg">Telefon</h3>
-                <p className="text-gray-600 font-light mt-1 text-xl">+48 503 142 398</p>
+                <p className="text-gray-600 font-light mt-1 text-xl">+48 793 942 793</p>
               </div>
             </div>
 
@@ -62,7 +62,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground text-lg">E-mail</h3>
-                <p className="text-gray-600 font-light mt-1 text-xl">Aga75karol@op.pl</p>
+                <p className="text-gray-600 font-light mt-1 text-xl">riversideapartmentsosw@gmail.com</p>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 required
                 className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" 
-                placeholder="Twoje pytanie o wolny termin..."
+                placeholder="Wpisz treść wiadomości..."
               ></textarea>
             </div>
 
