@@ -124,7 +124,7 @@ app.post('/api/inquiries', (req, res) => {
         try {
           await resend.emails.send({
             from: 'rezerwacje@brosystems.pl',
-            to: 'Aga75karol@op.pl',
+            to: 'riversideapartmentsosw@gmail.com',
             subject: `Nowe zapytanie o rezerwację - ${guest_name}`,
             html: `<p><strong>Imię:</strong> ${guest_name}</p><p><strong>Telefon:</strong> ${guest_phone}</p><p><strong>Email:</strong> ${guest_email}</p><p><strong>Termin:</strong> ${start_date} do ${end_date}</p><p><strong>Goście:</strong> ${guest_count} (Dzieci do 3 lat: ${children_under_3}, Dzieci pow. 3 lat: ${children_over_3})</p><p><strong>Wiadomość:</strong> ${message}</p>`
           });
@@ -136,6 +136,25 @@ app.post('/api/inquiries', (req, res) => {
         res.json({ id: this.lastID, success: true });
     });
     stmt.finalize();
+});
+
+// --- General Contact Form Submission ---
+app.post('/api/contact', async (req, res) => {
+    const { name, phone, email, message } = req.body;
+    
+    if (resend) {
+        try {
+          await resend.emails.send({
+            from: 'rezerwacje@brosystems.pl',
+            to: 'riversideapartmentsosw@gmail.com',
+            subject: `Nowa wiadomość (Kontakt) - ${name}`,
+            html: `<p><strong>Imię i nazwisko:</strong> ${name}</p><p><strong>Telefon:</strong> ${phone || 'Nie podano'}</p><p><strong>Email:</strong> ${email}</p><p><strong>Wiadomość:</strong><br/>${message}</p>`
+          });
+        } catch (emailErr) {
+          console.error("Failed to send contact email via Resend", emailErr);
+        }
+    }
+    res.json({ success: true });
 });
 
 // --- Serve React Frontend in Production ---

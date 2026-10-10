@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Hero from '../components/Hero';
 
+const API_URL = import.meta.env.PROD ? '' : 'http://localhost:3001';
+
 const Contact = () => {
   const [searchParams] = useSearchParams();
   const [message, setMessage] = useState('');
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     const checkin = searchParams.get('checkin');
@@ -71,41 +74,66 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="flex-1 bg-white p-10 border border-gray-100 shadow-xl">
           <h3 className="text-2xl font-serif text-foreground mb-6">Napisz do nas</h3>
-          {/* Uzupełnij adres action po założeniu darmowego konta na Formspree.io */}
-          <form action="https://formspree.io/f/TWOJ_KOD_FORMSPREE" method="POST" className="space-y-6">
-            <div>
-              <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Imię i Nazwisko</label>
-              <input type="text" name="name" required className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="Jan Kowalski" />
+          
+          {submitStatus === 'success' ? (
+            <div className="bg-green-50 text-green-800 p-6 rounded-lg text-center">
+              Dziękujemy! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą najszybciej jak to możliwe.
             </div>
-            
-            <div className="grid grid-cols-2 gap-6">
+          ) : (
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              setSubmitStatus('sending');
+              const formData = new FormData(e.target);
+              try {
+                const res = await fetch(`${API_URL}/api/contact`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(Object.fromEntries(formData.entries()))
+                });
+                if (res.ok) setSubmitStatus('success');
+                else setSubmitStatus('error');
+              } catch (err) {
+                setSubmitStatus('error');
+              }
+            }} className="space-y-6">
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Telefon</label>
-                <input type="tel" name="phone" className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="+48 ___ ___ ___" />
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Imię i Nazwisko</label>
+                <input type="text" name="name" required className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="Jan Kowalski" />
               </div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Telefon</label>
+                  <input type="tel" name="phone" className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="+48 ___ ___ ___" />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">E-mail</label>
+                  <input type="email" name="email" required className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="jan@example.com" />
+                </div>
+              </div>
+
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">E-mail</label>
-                <input type="email" name="email" required className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="jan@example.com" />
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Wiadomość</label>
+                <textarea 
+                  name="message"
+                  rows="4" 
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" 
+                  placeholder="Wpisz treść wiadomości..."
+                ></textarea>
               </div>
-            </div>
 
-            <div>
-              <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Wiadomość</label>
-              <textarea 
-                name="message"
-                rows="4" 
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" 
-                placeholder="Wpisz treść wiadomości..."
-              ></textarea>
-            </div>
+              {submitStatus === 'error' && (
+                <p className="text-red-500 text-sm">Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń.</p>
+              )}
 
-            <button type="submit" className="w-full bg-accent text-white py-4 text-sm font-bold tracking-widest hover:bg-[#b88c45] transition-colors mt-4">
-              WYŚLIJ ZAPYTANIE
-            </button>
-          </form>
+              <button disabled={submitStatus === 'sending'} type="submit" className="w-full bg-accent disabled:opacity-50 text-white py-4 text-sm font-bold tracking-widest hover:bg-[#b88c45] transition-colors mt-4">
+                {submitStatus === 'sending' ? 'WYSYŁANIE...' : 'WYŚLIJ ZAPYTANIE'}
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
