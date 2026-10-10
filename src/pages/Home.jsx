@@ -65,9 +65,9 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { id: 1, title: "Apartament Standard", img: "IMG_3735.jpg", desc: "Z komfortowym łóżkiem, aneksem kuchennym i łazienką z prysznicem." },
-              { id: 2, title: "Apartament Superior", img: "IMG_3746.jpg", desc: "Przestronny apartament z częścią wypoczynkową i w pełni wyposażoną kuchnią." },
-              { id: 3, title: "Apartament z Widokiem", img: "IMG_3785-HDR-Edytuj.jpg", desc: "Z pięknym widokiem na okolicę, idealny dla par ceniących wygodę." }
+              { id: 1, title: "Apartament 3-osobowy (nr 5)", img: "IMG_3735.jpg", desc: "Przytulny, w pełni wyposażony apartament idealny dla par lub rodziny z dzieckiem." },
+              { id: 2, title: "Apartamenty 4-osobowe", img: "IMG_3746.jpg", desc: "Oferujemy aż 10 przestronnych apartamentów czteroosobowych (m.in. nr 4, 6, 10, 12, 17, 18, 24, 28, 29, 30)." },
+              { id: 3, title: "Twój Pełen Komfort", img: "IMG_3785-HDR-Edytuj.jpg", desc: "Niezależnie od wybranego numeru, każdy apartament oferuje ten sam wysoki standard z aneksem, klimatyzacją i prywatną łazienką." }
             ].map(domek => (
               <div key={domek.id} className="bg-white shadow-md group overflow-hidden flex flex-col h-full">
                 <div className="relative h-64 overflow-hidden">

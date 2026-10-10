@@ -15,7 +15,7 @@ const Apartments = () => {
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-4xl font-serif text-foreground mb-6">Wybierz Wymarzony Apartament</h2>
             <p className="text-gray-600 font-light leading-relaxed">
-              Zadbaliśmy o to, aby nasze wnętrza były nowoczesne, wygodne i w pełni wyposażone. Oferujemy różne opcje zakwaterowania dopasowane do potrzeb osób podróżujących solo, w parach oraz małych grup.
+              Zadbaliśmy o to, aby nasze wnętrza były nowoczesne, wygodne i w pełni wyposażone. Oferujemy łącznie 11 niezależnych lokali – intymny <strong>apartament 3-osobowy (nr 5)</strong> oraz <strong>10 przestronnych apartamentów 4-osobowych</strong> (nr 4, 6, 10, 12, 17, 18, 24, 28, 29, 30). Niezależnie od wielkości grupy, znajdziesz tu idealne miejsce na odpoczynek.
             </p>
           </div>
 
