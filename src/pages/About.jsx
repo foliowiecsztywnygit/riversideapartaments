@@ -32,11 +32,11 @@ const About = () => {
       />
 
       <section className="py-32 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <div className="flex-1 w-full h-[600px] relative">
+        <div className="flex-1 w-full h-[600px] relative rounded-2xl overflow-hidden shadow-2xl">
           <img 
             src="/assets/images/IMG_3785-HDR-Edytuj.jpg" 
             alt="Wnętrze apartamentów" 
-            className="w-full h-full object-cover shadow-2xl"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="flex-1 text-center lg:text-left">
@@ -87,7 +87,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 text-left">
             {reviews.map((review, i) => (
-              <div key={i} className="bg-white/5 p-10 border border-white/10 hover:border-accent transition-colors relative">
+              <div key={i} className="bg-white/5 p-10 border border-white/10 hover:border-accent transition-colors relative rounded-xl">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
                   <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 32 32">
                     <path d="M10 8c-4.4 0-8 3.6-8 8v8h8v-8H6c0-2.2 1.8-4 4-4V8zm18 0c-4.4 0-8 3.6-8 8v8h8v-8h-4c0-2.2 1.8-4 4-4V8z"/>
@@ -98,8 +98,8 @@ const About = () => {
                   "{review.text}"
                 </p>
                 <div className="flex justify-between items-center text-sm border-t border-white/10 pt-6">
-                  <span className="font-bold text-white uppercase tracking-widest">{review.author}</span>
-                  <span className="text-gray-500">{review.date}</span>
+                  <span className="font-bold text-white tracking-wider">{review.author}</span>
+                  <span className="text-gray-400 font-light">{review.date}</span>
                 </div>
               </div>
             ))}

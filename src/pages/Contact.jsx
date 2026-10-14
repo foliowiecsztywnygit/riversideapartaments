@@ -6,6 +6,9 @@ const API_URL = import.meta.env.PROD ? '' : 'http://localhost:3001';
 
 const Contact = () => {
   const [searchParams] = useSearchParams();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -16,6 +19,31 @@ const Contact = () => {
       setMessage(`Dzień dobry, potrzebuję noclegu w River Side Apartments pomiędzy ${checkin} a ${checkout}. Czy mają Państwo wolny termin?`);
     }
   }, [searchParams]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus('sending');
+
+    try {
+      const res = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, message })
+      });
+
+      if (res.ok) {
+        setSubmitStatus('success');
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+    }
+  };
 
   return (
     <div>
@@ -55,7 +83,9 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground text-lg">Telefon</h3>
-                <p className="text-gray-600 font-light mt-1 text-xl">+48 793 942 793</p>
+                <p className="text-gray-600 font-light mt-1">
+                  <a href="tel:+48793942793" className="hover:text-accent transition-colors">+48 793 942 793</a>
+                </p>
               </div>
             </div>
 
@@ -65,78 +95,91 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-foreground text-lg">E-mail</h3>
-                <p className="text-gray-600 font-light mt-1 text-xl">riversideapartmentsosw@gmail.com</p>
+                <p className="text-gray-600 font-light mt-1">
+                  <a href="mailto:riversideapartmentsosw@gmail.com" className="hover:text-accent transition-colors">riversideapartmentsosw@gmail.com</a>
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="flex-1 bg-white p-10 border border-gray-100 shadow-xl">
+        {/* Form */}
+        <div className="flex-1 bg-white p-8 md:p-12 border border-gray-100 shadow-xl rounded-2xl">
           <h3 className="text-2xl font-serif text-foreground mb-6">Napisz do nas</h3>
           
-          {submitStatus === 'success' ? (
-            <div className="bg-green-50 text-green-800 p-6 rounded-lg text-center">
-              Dziękujemy! Twoja wiadomość została wysłana. Skontaktujemy się z Tobą najszybciej jak to możliwe.
+          {submitStatus === 'success' && (
+            <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-sm">
+              Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.
             </div>
-          ) : (
-            <form onSubmit={async (e) => {
-              e.preventDefault();
-              setSubmitStatus('sending');
-              const formData = new FormData(e.target);
-              try {
-                const res = await fetch(`${API_URL}/api/contact`, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(Object.fromEntries(formData.entries()))
-                });
-                if (res.ok) setSubmitStatus('success');
-                else setSubmitStatus('error');
-              } catch (err) {
-                setSubmitStatus('error');
-              }
-            }} className="space-y-6">
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Imię i Nazwisko</label>
-                <input type="text" name="name" required className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="Jan Kowalski" />
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Telefon</label>
-                  <input type="tel" name="phone" className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="+48 ___ ___ ___" />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">E-mail</label>
-                  <input type="email" name="email" required className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" placeholder="jan@example.com" />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Wiadomość</label>
-                <textarea 
-                  name="message"
-                  rows="4" 
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                  className="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-accent transition-colors" 
-                  placeholder="Wpisz treść wiadomości..."
-                ></textarea>
-              </div>
-
-              {submitStatus === 'error' && (
-                <p className="text-red-500 text-sm">Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub zadzwoń.</p>
-              )}
-
-              <button disabled={submitStatus === 'sending'} type="submit" className="w-full bg-accent disabled:opacity-50 text-white py-4 text-sm font-bold tracking-widest hover:bg-[#b88c45] transition-colors mt-4">
-                {submitStatus === 'sending' ? 'WYSYŁANIE...' : 'WYŚLIJ ZAPYTANIE'}
-              </button>
-            </form>
           )}
-        </div>
-      </section>
 
+          {submitStatus === 'error' && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+              Wystąpił błąd podczas wysyłania wiadomości. Prosimy spróbować ponownie lub skontaktować się telefonicznie.
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-xs uppercase tracking-widest font-semibold text-gray-600 mb-2">Imię i Nazwisko</label>
+              <input 
+                type="text" 
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full bg-[#FAFAFA] border border-gray-200 px-4 py-3 rounded-lg focus:outline-hidden focus:border-accent"
+                placeholder="Jan Kowalski"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs uppercase tracking-widest font-semibold text-gray-600 mb-2">Adres E-mail</label>
+                <input 
+                  type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-[#FAFAFA] border border-gray-200 px-4 py-3 rounded-lg focus:outline-hidden focus:border-accent"
+                  placeholder="jan@example.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs uppercase tracking-widest font-semibold text-gray-600 mb-2">Numer Telefonu</label>
+                <input 
+                  type="tel" 
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full bg-[#FAFAFA] border border-gray-200 px-4 py-3 rounded-lg focus:outline-hidden focus:border-accent"
+                  placeholder="+48 123 456 789"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs uppercase tracking-widest font-semibold text-gray-600 mb-2">Treść wiadomości</label>
+              <textarea 
+                rows="5" 
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full bg-[#FAFAFA] border border-gray-200 px-4 py-3 rounded-lg focus:outline-hidden focus:border-accent"
+                placeholder="W czym możemy pomóc?"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              disabled={submitStatus === 'sending'}
+              className="w-full bg-accent hover:bg-[#b88c45] text-white py-4 font-semibold text-xs uppercase tracking-widest transition-colors duration-300 rounded-lg cursor-pointer disabled:opacity-50"
+            >
+              {submitStatus === 'sending' ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+            </button>
+          </form>
+        </div>
+
+      </section>
     </div>
   );
 };

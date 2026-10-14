@@ -1,11 +1,20 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 const Attractions = () => {
   const mainAttractions = [
     {
       id: 1,
+      name: "Wiślańska Trasa Rowerowa & Velo Soła",
+      distance: "50 m (tuż przy obiekcie)",
+      desc: "Jedna z najpiękniejszych tras rowerowych w Małopolsce przebiega tuż obok naszych drzwi wzdłuż rzeki Soły. Płaska, asfaltowa nawierzchnia doskonale nadaje się dla rodzin z dziećmi, miłośników rolek i kolarzy.",
+      img: "bulwnadsola.jpg",
+      highlight: true
+    },
+    {
+      id: 2,
       name: "Energylandia w Zatorze",
       distance: "ok. 17 km (15 min autem)",
       desc: "Największy Park Rozrywki w Polsce to absolutny hit dla rodzin i fanów adrenaliny. Rollercoastery, strefy wodne i mnóstwo atrakcji dla każdego. Nasze apartamenty to idealna baza wypadowa po dniu pełnym wrażeń!",
@@ -13,15 +22,15 @@ const Attractions = () => {
       highlight: true
     },
     {
-      id: 2,
+      id: 3,
       name: "Bulwary nad Sołą",
       distance: "100 m",
       desc: "Znakomite miejsce na poranny jogging, popołudniowy spacer czy relaks na trawie. Apartamenty zlokalizowane są tuż przy bulwarach, dając natychmiastowy dostęp do terenów rekreacyjnych wokół rzeki.",
-      img: "bulwnadsola.jpg",
+      img: "bulwary.jpg",
       highlight: false
     },
     {
-      id: 3,
+      id: 4,
       name: "Zamek w Oświęcimiu",
       distance: "ok. 500 m",
       desc: "Historyczny Zamek z wieżą, z której roztacza się świetna panorama na miasto i rzekę. Świetne miejsce na krótki spacer, oferujące interesujące wystawy i odrobinę lokalnej historii.",
@@ -29,7 +38,7 @@ const Attractions = () => {
       highlight: false
     },
     {
-      id: 4,
+      id: 5,
       name: "Rynek Główny",
       distance: "ok. 300 m",
       desc: "Odrestaurowany rynek z zabytkowym ratuszem i przyjemnymi kawiarniami oraz restauracjami. Idealne miejsce na obiad czy wieczornego drinka po intensywnym dniu zwiedzania.",
@@ -37,7 +46,7 @@ const Attractions = () => {
       highlight: false
     },
     {
-      id: 5,
+      id: 6,
       name: "Muzeum Żydowskie i Synagoga",
       distance: "ok. 400 m",
       desc: "Centrum Żydowskie w Oświęcimiu to ciekawe miejsce pokazujące przedwojenną historię miasta, w którym krzyżowały się różne kultury.",
@@ -45,7 +54,7 @@ const Attractions = () => {
       highlight: false
     },
     {
-      id: 6,
+      id: 7,
       name: "Muzeum Auschwitz-Birkenau",
       distance: "ok. 3.5 km",
       desc: "Miejsce Pamięci wpisane na listę UNESCO. Ważny punkt dla osób zainteresowanych historią II Wojny Światowej (zalecamy wcześniejszą rezerwację biletów online).",
@@ -102,23 +111,56 @@ const Attractions = () => {
   return (
     <div>
       <Helmet>
-        <title>Atrakcje i Okolica | River Side Apartments Oświęcim - Baza Wypadowa do Energylandii</title>
-        <meta name="description" content="Odkryj atrakcje wokół River Side Apartments w Oświęcimiu. Idealna baza wypadowa do Energylandii, Zatorlandu, Inwałdu, Pszczyny i w Beskidy. Zarezerwuj nocleg!" />
+        <title>Atrakcje & Wiślana Trasa Rowerowa | River Side Apartments Oświęcim</title>
+        <meta 
+          name="description" 
+          content="Odkryj Wiślaną Trasę Rowerową, Energylandie, Bulwary nad Sołą i zamek w Oświęcimiu. Zamykana rowerownia na życzenie w River Side Apartments!" 
+        />
       </Helmet>
 
       <Hero 
         title="Atrakcje & Okolica" 
-        subtitle="Oświęcim jako idealna baza wypadowa do parków rozrywki i na południe Polski" 
+        subtitle="Wiślana Trasa Rowerowa, Energylandia i malownicze Bulwary nad Sołą" 
         isHome={false} 
       />
 
       <section className="py-24 bg-background min-h-screen">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           <div className="text-center mb-16 max-w-3xl mx-auto">
+            <span className="text-accent uppercase tracking-widest text-xs font-bold block mb-2">
+              Lokalizacja & Aktywność
+            </span>
             <h2 className="text-4xl font-serif text-foreground mb-6">Główne punkty w okolicy</h2>
             <p className="text-gray-600 font-light leading-relaxed">
-              Odpoczywając w naszych nowoczesnych apartamentach nad rzeką, omijasz turystyczny zgiełk, zachowując jednocześnie dostęp do absolutnie najlepszych atrakcji regionu zaledwie kilka minut drogi samochodem lub na piechotę.
+              Odpoczywając w naszych nowoczesnych apartamentach nad rzeką, omijasz turystyczny zgiełk, zachowując jednocześnie bezpośredni dostęp do najpiękniejszych tras rowerowych i atrakcji regionu.
             </p>
+          </div>
+
+          {/* Bike Room Dedicated Callout Banner */}
+          <div className="mb-20 bg-white rounded-3xl p-8 md:p-12 border-2 border-accent/30 shadow-xl flex flex-col md:flex-row items-center gap-8">
+            <div className="w-20 h-20 rounded-2xl bg-accent/15 text-accent flex items-center justify-center text-4xl flex-shrink-0">
+              🚲
+            </div>
+            <div className="flex-grow text-center md:text-left">
+              <span className="text-accent uppercase tracking-widest text-xs font-bold block mb-1">
+                Dla Miłośników Dwóch Kółek
+              </span>
+              <h3 className="text-2xl font-serif text-foreground mb-2">
+                Wiślana Trasa Rowerowa tuż obok & Zamykana Rowerownia na życzenie
+              </h3>
+              <p className="text-gray-600 font-light text-sm leading-relaxed max-w-2xl">
+                Podróżujesz z rowerem? W River Side Apartments zapewniamy <strong>bezpieczną, zamykaną rowerownię dostępną bezpłatnie na życzenie naszych Gości</strong>. Zaledwie kilkadziesiąt metrów od budynku zaczyna się malownicza <strong>Wiślana Trasa Rowerowa oraz trasa Velo Soła</strong>. Po powrocie z rowerowej wycieczki zrelaksuj się w naszej saunie!
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Link 
+                to="/wellness"
+                className="inline-block bg-accent hover:bg-[#b88c45] text-white px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-colors shadow-md text-center"
+              >
+                Strefa Saun & Wellness
+              </Link>
+            </div>
           </div>
 
           {/* Main Attractions with Images */}
@@ -126,20 +168,20 @@ const Attractions = () => {
             {mainAttractions.map(attr => (
               <div 
                 key={attr.id} 
-                className={`bg-white border shadow-sm group overflow-hidden flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
+                className={`bg-white border shadow-sm group overflow-hidden flex flex-col rounded-2xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
                   attr.highlight ? 'border-accent ring-1 ring-accent' : 'border-gray-100'
                 }`}
               >
-                <div className="relative h-60 overflow-hidden bg-gray-200">
-                  <img src={`/assets/images/${attr.img}`} alt={attr.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90" />
-                  <div className={`absolute top-4 right-4 backdrop-blur-md px-4 py-1 text-xs font-bold uppercase tracking-widest border ${
-                    attr.highlight ? 'bg-accent/90 text-white border-accent' : 'bg-background/90 text-foreground border-gray-200'
+                <div className="relative h-64 overflow-hidden bg-gray-200">
+                  <img src={`/assets/images/${attr.img}`} alt={attr.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-95" />
+                  <div className={`absolute top-4 right-4 backdrop-blur-md px-4 py-1 text-xs font-bold uppercase tracking-widest rounded shadow border ${
+                    attr.highlight ? 'bg-accent/95 text-white border-accent' : 'bg-background/90 text-foreground border-gray-200'
                   }`}>
                     {attr.distance}
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-serif text-foreground mb-4">{attr.name}</h3>
+                  <h3 className="text-xl font-serif text-foreground mb-3">{attr.name}</h3>
                   <p className="text-sm text-gray-600 font-light leading-relaxed">
                     {attr.desc}
                   </p>
@@ -158,7 +200,7 @@ const Attractions = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {dayTrips.map(trip => (
-              <div key={trip.id} className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow hover:border-accent/30 rounded-xl">
+              <div key={trip.id} className="bg-white p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow hover:border-accent/30 rounded-2xl">
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-xs font-bold uppercase tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-full">
                     {trip.category}

@@ -28,7 +28,8 @@ const Footer = () => {
             <h4 className="text-sm font-serif mb-6 text-foreground">Na skróty</h4>
             <ul className="space-y-3 text-sm text-gray-600">
               <li><Link to="/" className="hover:text-accent transition-colors">Strona Główna</Link></li>
-              <li><Link to="/domki" className="hover:text-accent transition-colors">Apartamenty</Link></li>
+              <li><Link to="/apartamenty" className="hover:text-accent transition-colors">Apartamenty</Link></li>
+              <li><Link to="/wellness" className="hover:text-accent transition-colors">Wellness & Sauna</Link></li>
               <li><Link to="/o-nas" className="hover:text-accent transition-colors">O nas</Link></li>
               <li><Link to="/galeria" className="hover:text-accent transition-colors">Galeria</Link></li>
             </ul>

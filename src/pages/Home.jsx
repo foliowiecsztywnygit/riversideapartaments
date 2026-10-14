@@ -37,20 +37,25 @@ const Home = () => {
         <div className="flex-1 text-center lg:text-left">
           <h2 className="text-4xl font-serif text-foreground mb-6">River Side Apartments – Twój przystanek w Oświęcimiu</h2>
           <p className="text-gray-600 mb-6 font-light leading-relaxed">
-            Nasz obiekt usytuowany jest w centrum Oświęcimia, przy malowniczych Bulwarach nad rzeką Sołą. Nowoczesne apartamenty gwarantują wygodę i niezależność, oferując bliskość do najważniejszych punktów miasta – Zaledwie kilka minut od Rynku Głównego, Zamku i Muzeum Żydowskiego.
+            Nasz obiekt usytuowany jest w centrum Oświęcimia, przy malowniczych Bulwarach nad rzeką Sołą. Nowoczesne apartamenty gwarantują wygodę i niezależność, oferując bliskość do najważniejszych punktów miasta – zaledwie kilka minut od Rynku Głównego, Zamku i Muzeum Żydowskiego.
           </p>
           <p className="text-gray-600 font-light leading-relaxed mb-6">
-            Każdy z apartamentów jest w pełni wyposażony, posiada nowoczesną łazienkę, klimatyzację oraz szybkie bezprzewodowe połączenie Wi-Fi. Do Państwa dyspozycji przygotowaliśmy w pełni wyposażone aneksy kuchenne. W budynku znajduje się winda oraz parking podziemny, a zameldowanie przebiega szybko i wygodnie w formie online (bezobsługowy check-in).
+            Do dyspozycji Gości oddajemy <strong>15 niezależnych apartamentów 3-, 4- oraz 6-osobowych</strong>. Każdy lokal jest w pełni wyposażony, posiada nowoczesną łazienkę z pralką, klimatyzację oraz szybkie bezprzewodowe połączenie Wi-Fi. W budynku znajduje się winda, miejski parking podziemny tuż obok obiektu (a dla apartamentu Premium dedykowane miejsce w garażu), a zameldowanie przebiega szybko i wygodnie w formie online (bezobsługowy check-in ze skrytkami na kod).
           </p>
-          <p className="text-xs uppercase tracking-widest font-bold text-accent">
-            Energylandia (Zator) – zaledwie 15 min samochodem
-          </p>
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start items-center pt-2">
+            <span className="text-xs uppercase tracking-widest font-bold text-accent bg-accent/10 px-4 py-2 rounded-full">
+              Energylandia (Zator) – 15 min autem
+            </span>
+            <span className="text-xs uppercase tracking-widest font-bold text-foreground bg-gray-100 px-4 py-2 rounded-full">
+              Wiślana Trasa Rowerowa tuż obok
+            </span>
+          </div>
         </div>
-        <div className="flex-1 w-full h-[500px] relative">
+        <div className="flex-1 w-full h-[500px] relative rounded-2xl overflow-hidden shadow-2xl">
           <img 
-            src="/assets/images/IMG_3754-Edytuj.jpg" 
-            alt="Wnętrze River Side Apartments" 
-            className="w-full h-full object-cover shadow-lg"
+            src="/assets/images/3.jpg" 
+            alt="River Side Apartments nad rzeką Sołą" 
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
       </section>
@@ -59,39 +64,144 @@ const Home = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-16 text-center md:text-left">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent block mb-2">15 niezależnych lokali</span>
             <h2 className="text-4xl font-serif text-foreground mb-4">Nasze Apartamenty</h2>
-            <p className="text-gray-600 font-light">Oferujemy nowocześnie urządzone apartamenty, które zapewnią komfort podczas pobytu w Oświęcimiu.</p>
+            <p className="text-gray-600 font-light max-w-2xl">
+              Oferujemy komfortowe apartamenty 3-, 4- oraz 6-osobowe w standardzie Premium, gwarantujące pełną niezależność i relaks.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { id: 1, title: "Apartament 3-osobowy (nr 5)", img: "IMG_3735.jpg", desc: "Przytulny, w pełni wyposażony apartament idealny dla par lub rodziny z dzieckiem." },
-              { id: 2, title: "Apartamenty 4-osobowe", img: "IMG_3746.jpg", desc: "Oferujemy aż 10 przestronnych apartamentów czteroosobowych (m.in. nr 4, 6, 10, 12, 17, 18, 24, 28, 29, 30)." },
-              { id: 3, title: "Twój Pełen Komfort", img: "IMG_3785-HDR-Edytuj.jpg", desc: "Niezależnie od wybranego numeru, każdy apartament oferuje ten sam wysoki standard z aneksem, klimatyzacją i prywatną łazienką." }
-            ].map(domek => (
-              <div key={domek.id} className="bg-white shadow-md group overflow-hidden flex flex-col h-full">
-                <div className="relative h-64 overflow-hidden">
-                  <img src={`/assets/images/${domek.img}`} alt={domek.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest">
-                    REZERWUJ
-                  </div>
-                </div>
-                <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="text-xl font-serif text-foreground mb-4">{domek.title}</h3>
-                  <p className="text-sm text-gray-600 font-light mb-4 flex-grow">{domek.desc}</p>
-                  <ul className="text-sm text-gray-500 mb-6 space-y-1">
-                    <li>• Parking podziemny</li>
-                    <li>• Bezobsługowy online check-in</li>
-                    <li>• Bezpłatne Wi-Fi i klimatyzacja</li>
-                    <li>• Prywatna łazienka</li>
-                  </ul>
-                  <div className="flex justify-between items-end border-t border-gray-100 pt-4 mt-auto">
-                    <p className="text-xs text-gray-500 font-medium">Dostęp do windy<br/>Wyposażony aneks</p>
-                    <Link to="/domki" className="text-accent text-xs font-bold uppercase tracking-widest hover:text-[#b88c45]">Więcej</Link>
-                  </div>
+            
+            {/* Apartament 3-osobowy */}
+            <div className="bg-white rounded-2xl shadow-md border border-gray-100 group overflow-hidden flex flex-col h-full hover:shadow-xl transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="/assets/images/IMG_3785-HDR-Edytuj.jpg" 
+                  alt="Apartament 3-osobowy" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded shadow">
+                  3 OSOBOWY
                 </div>
               </div>
-            ))}
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-2xl font-serif text-foreground mb-3">Apartament 3-osobowy</h3>
+                <p className="text-sm text-gray-600 font-light mb-5 flex-grow">
+                  Przytulny, w pełni wyposażony apartament idealny dla par lub rodziny 2+1 z dzieckiem. Zapewnia intymność i wysoki standard wypoczynku.
+                </p>
+                <ul className="text-sm text-gray-600 mb-6 space-y-2 border-t border-gray-100 pt-4">
+                  <li className="flex items-center gap-2"><span>✓</span> Miejski parking podziemny obok</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Bezobsługowy check-in (skrytki na kod)</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Klimatyzacja i szybkie Wi-Fi</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Łazienka z pralką</li>
+                </ul>
+                <div className="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
+                  <span className="text-xs text-gray-500 font-medium">Winda • Aneks kuchenny</span>
+                  <Link to="/apartamenty" className="text-accent text-xs font-bold uppercase tracking-widest hover:text-[#b88c45]">
+                    Szczegóły &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Apartament 4-osobowy */}
+            <div className="bg-white rounded-2xl shadow-md border border-gray-100 group overflow-hidden flex flex-col h-full hover:shadow-xl transition-all duration-300">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="/assets/images/IMG_3830-HDR-Edytuj.jpg" 
+                  alt="Apartament 4-osobowy" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded shadow">
+                  4 OSOBOWY
+                </div>
+              </div>
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-2xl font-serif text-foreground mb-3">Apartament 4-osobowy</h3>
+                <p className="text-sm text-gray-600 font-light mb-5 flex-grow">
+                  Przestronny apartament ze strefą sypialną oraz salonem z rozkładaną sofą. Doskonały wybór dla rodzin i grup przyjaciół.
+                </p>
+                <ul className="text-sm text-gray-600 mb-6 space-y-2 border-t border-gray-100 pt-4">
+                  <li className="flex items-center gap-2"><span>✓</span> Miejski parking podziemny obok</li>
+                  <li className="flex items-center gap-2"><span>✓</span> W pełni wyposażony aneks kuchenny</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Klimatyzacja i szybkie Wi-Fi</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Łazienka z pralką</li>
+                </ul>
+                <div className="flex justify-between items-center border-t border-gray-100 pt-4 mt-auto">
+                  <span className="text-xs text-gray-500 font-medium">Winda • Strefa wypoczynku</span>
+                  <Link to="/apartamenty" className="text-accent text-xs font-bold uppercase tracking-widest hover:text-[#b88c45]">
+                    Szczegóły &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Apartament 6-osobowy Premium */}
+            <div className="bg-white rounded-2xl shadow-lg border-2 border-accent/40 group overflow-hidden flex flex-col h-full hover:shadow-2xl transition-all duration-300 relative">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src="/assets/images/IMG_3993-Edytuj.jpg" 
+                  alt="Apartament 6-osobowy Premium" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/40 px-3 py-1 text-xs font-bold uppercase tracking-widest rounded">
+                  ★ PREMIUM
+                </div>
+                <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded shadow">
+                  6 OSOBOWY
+                </div>
+              </div>
+              <div className="p-8 flex-grow flex flex-col bg-gradient-to-b from-white to-[#FAF8F5]">
+                <h3 className="text-2xl font-serif text-foreground mb-3">Apartament 6-osobowy Premium</h3>
+                <p className="text-sm text-gray-600 font-light mb-5 flex-grow">
+                  Luksusowy, największy apartament typu Premium. Jako jedyny posiada <strong>dedykowany, przynależny parking podziemny w budynku</strong> w cenie pobytu!
+                </p>
+                <ul className="text-sm text-gray-700 mb-6 space-y-2 border-t border-accent/20 pt-4">
+                  <li className="flex items-center gap-2 font-medium text-accent">
+                    <span>✓</span> <strong>Własny parking podziemny w budynku</strong>
+                  </li>
+                  <li className="flex items-center gap-2"><span>✓</span> Duży salon z jadalnią i sypialnie</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Klimatyzacja i szybkie Wi-Fi</li>
+                  <li className="flex items-center gap-2"><span>✓</span> Nowoczesna łazienka z pralką</li>
+                </ul>
+                <div className="flex justify-between items-center border-t border-accent/20 pt-4 mt-auto">
+                  <span className="text-xs text-accent font-bold uppercase tracking-wider">Maksymalny komfort</span>
+                  <Link to="/apartamenty" className="bg-accent text-white px-4 py-2 rounded text-xs font-bold uppercase tracking-widest hover:bg-[#b88c45] transition-colors">
+                    Rezerwuj &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Wellness & Sauna Highlight Banner */}
+      <section className="py-20 bg-[#0F1416] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-black/80 via-black/60 to-black/80 border border-white/10 rounded-3xl p-8 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="text-accent text-xs uppercase tracking-widest font-bold block mb-2">Relaks & Regeneracja</span>
+              <h2 className="text-3xl md:text-4xl font-serif mb-4">Strefa Wellness & Prywatna Sauna</h2>
+              <p className="text-gray-300 font-light leading-relaxed mb-6">
+                Zarezerwuj relaksujący seans w naszej saunie na wyłączność. Idealny sposób na odprężenie po dniu pełnym wrażeń na Bulwarach nad Sołą lub w Energylandii.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-gray-300">
+                <span className="flex items-center gap-1.5">✓ Rezerwacja online dla mieszkańców i gości</span>
+                <span className="flex items-center gap-1.5">✓ Naturalna aromaterapia</span>
+                <span className="flex items-center gap-1.5">✓ Prysznic schładzający</span>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+              <Link 
+                to="/wellness"
+                className="bg-accent hover:bg-[#b88c45] text-white px-8 py-4 rounded-xl text-xs font-bold uppercase tracking-widest text-center transition-colors shadow-xl"
+              >
+                Kalendarz Rezerwacji Sauny
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -100,39 +210,38 @@ const Home = () => {
       <section className="py-24 text-center px-4">
         <h2 className="text-3xl font-serif text-foreground mb-8">Udogodnienia i Wyposażenie</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left">
-          <div className="p-6 bg-white border border-gray-100 shadow-sm">
-            <h3 className="text-xl font-serif text-accent mb-4">W pełni wyposażona kuchnia</h3>
+          <div className="p-8 bg-white border border-gray-100 shadow-sm rounded-xl">
+            <h3 className="text-xl font-serif text-accent mb-4">Wyposażone Kuchnie</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              Większość naszych apartamentów dysponuje w pełni wyposażonym aneksem kuchennym zawierającym kuchenkę, piekarnik, lodówkę, czajnik oraz niezbędne przybory, co daje pełną niezależność.
+              Każdy z naszych apartamentów dysponuje w pełni wyposażonym aneksem kuchennym zawierającym płytę grzewczą, lodówkę, czajnik oraz niezbędne naczynia i przybory.
             </p>
           </div>
-          <div className="p-6 bg-white border border-gray-100 shadow-sm">
+          <div className="p-8 bg-white border border-gray-100 shadow-sm rounded-xl">
             <h3 className="text-xl font-serif text-accent mb-4">Klimatyzacja i Winda</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              Zapewniamy odpowiednią temperaturę o każdej porze roku dzięki nowoczesnemu systemowi klimatyzacji. W budynku dostępna jest winda ułatwiająca dotarcie z bagażami na wyższe piętra.
+              Zapewniamy komfortową temperaturę dzięki nowoczesnemu systemowi klimatyzacji. W budynku dostępna jest cichobieżna winda ułatwiająca dotarcie z bagażami na wyższe piętra.
             </p>
           </div>
-          <div className="p-6 bg-white border border-gray-100 shadow-sm">
-            <h3 className="text-xl font-serif text-accent mb-4">Prywatna Łazienka</h3>
+          <div className="p-8 bg-white border border-gray-100 shadow-sm rounded-xl">
+            <h3 className="text-xl font-serif text-accent mb-4">Łazienka z Pralką</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              Każdy apartament posiada nowoczesną łazienkę z prysznicem, w której przygotowaliśmy dla Państwa bezpłatny zestaw kosmetyków, świeże ręczniki oraz pralkę w niektórych jednostkach.
+              Wszystkie apartamenty wyposażone są w nowoczesną łazienkę z prysznicem, w której przygotowaliśmy dla Państwa <strong>pralkę</strong>, bezpłatny zestaw kosmetyków, świeże ręczniki i suszarkę.
             </p>
           </div>
-          <div className="p-6 bg-white border border-gray-100 shadow-sm">
-            <h3 className="text-xl font-serif text-accent mb-4">Parking i Check-in</h3>
+          <div className="p-8 bg-white border border-gray-100 shadow-sm rounded-xl">
+            <h3 className="text-xl font-serif text-accent mb-4">Parking i Rowerownia</h3>
             <p className="text-sm text-gray-600 font-light leading-relaxed">
-              Do dyspozycji gości oddajemy wygodny parking podziemny. Proces meldowania jest w pełni zautomatyzowany – poprzez system online check-in otrzymują Państwo dostęp do apartamentu.
+              Miejski parking podziemny znajduje się bezpośrednio obok apartamentu (apartament 6-os. posiada własne miejsce w garażu). Dostępna jest również <strong>bezpieczna rowerownia na życzenie</strong>.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Reviews - Redesigned with Glassmorphism */}
+      {/* Reviews - Glassmorphism */}
       <section className="relative py-32 overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img src="/assets/images/bulwary.jpg" alt="Rzeka Soła" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gray-900/65 backdrop-blur-sm"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
@@ -179,32 +288,32 @@ const Home = () => {
           <div className="space-y-6">
             <div className="border-b border-gray-200 pb-6">
               <h3 className="text-lg font-bold text-foreground mb-2">Gdzie dokładnie znajdują się apartamenty?</h3>
-              <p className="text-gray-600 font-light">River Side Apartments znajdują się przy ulicy Bulwary 1 w Oświęcimiu, tuż obok rzeki Soły, niedaleko hotelu Hampton by Hilton i krótki spacer od Rynku Głównego.</p>
+              <p className="text-gray-600 font-light">River Side Apartments znajdują się przy ulicy Bulwary 1 w Oświęcimiu, tuż obok rzeki Soły, w bezpośrednim sąsiedztwie hotelu Hampton by Hilton i krótki spacer od Rynku Głównego.</p>
             </div>
             
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Czy obiekt posiada klimatyzację i darmowe Wi-Fi?</h3>
-              <p className="text-gray-600 font-light">Tak, wszystkie apartamenty są klimatyzowane i zapewniają dostęp do bezpłatnego, szybkiego internetu Wi-Fi.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Czy obiekt posiada klimatyzację i Wi-Fi?</h3>
+              <p className="text-gray-600 font-light">Tak, wszystkie apartamenty posiadają nowoczesną klimatyzację oraz zapewniają bezpłatny dostęp do szybkiego internetu Wi-Fi.</p>
             </div>
             
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Czy w budynku znajduje się winda?</h3>
-              <p className="text-gray-600 font-light">Tak, do dyspozycji naszych Gości jest winda w budynku, dzięki czemu przemieszczanie się z bagażami nie stanowi problemu.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Jak wygląda kwestia parkingu?</h3>
+              <p className="text-gray-600 font-light">Miejski parking podziemny dostępny jest tuż obok obiektu. Dodatkowo nasz luksusowy apartament 6-osobowy typu Premium posiada własne, dedykowane stanowisko w parkingu podziemnym budynku w cenie.</p>
             </div>
 
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Jak daleko jest do Muzeum Auschwitz-Birkenau?</h3>
-              <p className="text-gray-600 font-light">Nasze apartamenty oddalone są od Muzeum Auschwitz-Birkenau o około 3,5 kilometra, co pozwala na dojazd samochodem w kilka minut.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Czy w apartamencie jest pralka?</h3>
+              <p className="text-gray-600 font-light">Tak, wszystkie nasze apartamenty wyposażone są w pralkę w łazience, co jest ogromnym udogodnieniem zarówno przy krótkich, jak i dłuższych pobytach.</p>
             </div>
-            
+
             <div className="border-b border-gray-200 pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Czy dostępne są ręczniki i pościel?</h3>
-              <p className="text-gray-600 font-light">Tak, wszystkie apartamenty posiadają świeżą pościel i zestawy ręczników dla każdego zarejestrowanego Gościa. Zapewniamy również bezpłatne kosmetyki hotelowe.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">O której godzinie odbywa się zameldowanie (check-in)?</h3>
+              <p className="text-gray-600 font-light">Zameldowanie rozpoczyna się od godziny 15:00. Nie ma godziny granicznej przyjazdu – dzięki bezobsługowemu systemowi ze skrytkami na kod (smart lock) możesz zameldować się o dowolnej, nawet późnej porze!</p>
             </div>
 
             <div className="pb-6">
-              <h3 className="text-lg font-bold text-foreground mb-2">Jak wygląda kwestia parkingu i zameldowania?</h3>
-              <p className="text-gray-600 font-light">Dla naszych Gości udostępniamy parking podziemny. Zameldowanie odbywa się w pełni bezobsługowo w formie online poprzez nasz system rezerwacyjny.</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">Czy mogę bezpiecznie przechować rowery?</h3>
+              <p className="text-gray-600 font-light">Tak! Obiekt znajduje się tuż przy Wiślanej Trasie Rowerowej i trasie Velo Soła. Dla naszych Gości udostępniamy bezpieczną, zamykaną rowerownię na życzenie.</p>
             </div>
           </div>
         </div>

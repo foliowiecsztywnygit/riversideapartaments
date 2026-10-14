@@ -10,6 +10,7 @@ import Attractions from './pages/Attractions';
 import Rules from './pages/Rules';
 import Contact from './pages/Contact';
 import BookingPage from './pages/Booking';
+import Wellness from './pages/Wellness';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import { HelmetProvider } from 'react-helmet-async';
@@ -35,7 +36,9 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/apartamenty" element={<Apartments />} />
             <Route path="/domki" element={<Apartments />} />
+            <Route path="/wellness" element={<Wellness />} />
             <Route path="/galeria" element={<GalleryPage />} />
             <Route path="/o-nas" element={<About />} />
             <Route path="/atrakcje" element={<Attractions />} />

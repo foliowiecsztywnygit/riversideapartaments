@@ -15,7 +15,8 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Domki', path: '/domki' },
+    { name: 'Apartamenty', path: '/apartamenty' },
+    { name: 'Wellness', path: '/wellness' },
     { name: 'O nas', path: '/o-nas' },
     { name: 'Galeria', path: '/galeria' },
     { name: 'Atrakcje', path: '/atrakcje' },
@@ -36,23 +37,26 @@ const Navbar = () => {
           </Link>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.path}
-                to={link.path} 
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${location.pathname === link.path ? 'text-accent' : 'text-white hover:text-accent'}`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="hidden md:flex space-x-7 items-center">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path || (link.path === '/apartamenty' && location.pathname === '/domki');
+              return (
+                <Link 
+                  key={link.path}
+                  to={link.path} 
+                  className={`text-sm font-medium tracking-wide transition-colors duration-200 ${isActive ? 'text-accent' : 'text-white hover:text-accent'}`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA */}
           <div className="hidden md:flex items-center">
             <Link 
-              to="/domki" 
-              className="border border-white/60 text-white px-8 py-2.5 text-xs font-semibold tracking-widest hover:border-accent hover:text-accent transition-colors duration-300"
+              to="/apartamenty" 
+              className="border border-white/60 text-white px-7 py-2.5 text-xs font-semibold tracking-widest hover:border-accent hover:text-accent transition-colors duration-300"
             >
               REZERWUJ
             </Link>
