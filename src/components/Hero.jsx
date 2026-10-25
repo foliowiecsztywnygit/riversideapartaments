@@ -9,8 +9,11 @@ const Hero = ({ title, subtitle, isHome = false }) => {
         loop 
         muted 
         playsInline 
+        poster="/assets/video/riverside-drone-poster.webp"
         className="absolute inset-0 w-full h-full object-cover opacity-70"
       >
+        <source src="/assets/video/riverside-drone.webm" type="video/webm" />
+        <source src="/assets/video/riverside-drone.mp4" type="video/mp4" />
         <source src="/assets/video/hero-background.mp4" type="video/mp4" />
       </video>
       

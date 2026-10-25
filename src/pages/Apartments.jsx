@@ -43,15 +43,15 @@ const Apartments = () => {
             {/* Feature 2 - Aneksy kuchenne */}
             <div className="flex flex-col md:flex-row-reverse items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/IMG_3830-HDR-Edytuj.jpg" alt="Kuchnia" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
+                <img src="/assets/images/IMG_3845-Edytuj.jpg" alt="Aneks kuchenny" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
               </div>
               <div className="flex-1">
                 <h3 className="text-3xl font-serif text-foreground mb-6">Funkcjonalne Aneksy Kuchenne</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Wszystkie apartamenty posiadają własne aneksy kuchenne lub dedykowane części jadalniane, w których można samodzielnie przygotować ulubione posiłki.
+                  Wszystkie apartamenty posiadają własne, w pełni wyposażone aneksy kuchenne oraz dedykowaną część jadalnianą, w których można wygodnie przygotować ulubione posiłki.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>✓ Płyta indukcyjna, lodówka, zamrażalnik</li>
+                  <li>✓ Płyta indukcyjna, lodówka, zamrażalnik, piekarnik</li>
                   <li>✓ Niezbędne naczynia, sztućce, garnki i patelnie</li>
                   <li>✓ Czajnik elektryczny oraz zestaw powitalny (kawa, herbata)</li>
                   <li>✓ Część jadalniana ze stołem i krzesłami</li>
@@ -62,18 +62,18 @@ const Apartments = () => {
             {/* Feature 3 - Strefa wypoczynkowa */}
             <div className="flex flex-col md:flex-row items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/IMG_3754-Edytuj.jpg" alt="Salon" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
+                <img src="/assets/images/IMG_3988-Edytuj.jpg" alt="Część wypoczynkowa - salon" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
               </div>
               <div className="flex-1">
-                <h3 className="text-3xl font-serif text-foreground mb-6">Strefa Wypoczynkowa</h3>
+                <h3 className="text-3xl font-serif text-foreground mb-6">Strefa Wypoczynkowa (Salon)</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Nowocześnie zaaranżowane salony z wygodnymi sofami i kącikiem wypoczynkowym tworzą idealne warunki do wieczornego relaksu.
+                  Nowocześnie i ze smakiem zaaranżowane salony z wygodnymi sofami, stolikami kawowymi i kącikiem do relaksu tworzą idealne warunki do wypoczynku po całym dniu.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
                   <li>✓ Telewizory Smart TV z płaskim ekranem</li>
                   <li>✓ Szybki, bezpłatny światłowodowy internet Wi-Fi</li>
-                  <li>✓ Rozkładane sofy z funkcją spania codziennego</li>
-                  <li>✓ Designerskie oświetlenie i przytulna atmosfera</li>
+                  <li>✓ Rozkładane, komfortowe sofy</li>
+                  <li>✓ Klimatyzacja oraz nowoczesny design z architektonicznym betonem</li>
                 </ul>
               </div>
             </div>
@@ -81,15 +81,15 @@ const Apartments = () => {
             {/* Feature 4 - Łazienki z pralką */}
             <div className="flex flex-col md:flex-row-reverse items-center gap-16">
               <div className="flex-1">
-                <img src="/assets/images/IMG_3735.jpg" alt="Łazienka z pralką" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
+                <img src="/assets/images/IMG_3914-Edytuj.jpg" alt="Nowoczesna łazienka" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
               </div>
               <div className="flex-1">
                 <h3 className="text-3xl font-serif text-foreground mb-6">Nowoczesne Łazienki z Pralką</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Wszystkie nasze apartamenty posiadają nowoczesne łazienki wyposażone w <strong>pralkę</strong>, co stanowi ogromną wygodę przy dłuższych pobytach i wyjazdach z dziećmi.
+                  <strong>Wszystkie nasze apartamenty wyposażone są w pralkę</strong>, co stanowi ogromną wygodę przy dłuższych pobytach biznesowych, turystycznych i rodzinnych.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>✓ Pralka we wszystkich apartamentach</li>
+                  <li>✓ Pralka w każdym apartamencie</li>
                   <li>✓ Przestronne kabiny prysznicowe typu walk-in</li>
                   <li>✓ Zestaw świeżych ręczników i suszarka do włosów</li>
                   <li>✓ Bezpłatny zestaw kosmetyków hotelowych</li>
@@ -100,23 +100,29 @@ const Apartments = () => {
             {/* Feature 5 - Apartament Premium 6-osobowy */}
             <div className="flex flex-col md:flex-row items-center gap-16 bg-[#faf8f5] p-8 md:p-12 rounded-2xl border border-[#ece4d8]">
               <div className="flex-1">
-                <img src="/assets/images/IMG_3752.jpg" alt="Apartament Premium 6-osobowy" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
+                <img src="/assets/images/apartament-6/_DSC2907.jpg" alt="Apartament 6-osobowy Premium" className="w-full h-[400px] object-cover shadow-xl rounded-xl" />
               </div>
               <div className="flex-1">
-                <span className="text-xs uppercase tracking-widest font-bold text-accent mb-2 block">Standard Najwyższy</span>
+                <span className="text-xs uppercase tracking-widest font-bold text-accent mb-2 block">Standard Najwyższy • Premium</span>
                 <h3 className="text-3xl font-serif text-foreground mb-4">Apartament 6-osobowy Premium</h3>
                 <p className="text-gray-600 font-light leading-relaxed mb-6">
-                  Największy i najbardziej ekskluzywny apartament w obiekcie, zaprojektowany z myślą o większych rodzinach lub grupach przyjaciół. Tylko ten apartament ma zagwarantowane <strong>prywatne, przynależne miejsce w parkingu podziemnym</strong>.
+                  Największy i najbardziej ekskluzywny apartament w obiekcie, zaprojektowany z myślą o rodzinach lub grupach do 6 osób. <strong>Tylko ten apartament posiada gwarantowane dedykowane prywatne miejsce w parkingu podziemnym budynku</strong>.
                 </p>
                 <ul className="text-sm text-gray-500 space-y-2 mb-6">
                   <li>✓ Przeznaczony dla maksymalnie 6 osób</li>
-                  <li>✓ Dedykowane miejsce parkingowe w garażu podziemnym budynku</li>
-                  <li>✓ Dwie niezależne strefy sypialne i przestronny salon</li>
-                  <li>✓ Bezpośredni dostęp windą</li>
+                  <li>✓ Przynależny prywatny parking podziemny w budynku</li>
+                  <li>✓ Przestronny salon z jadalnią i w pełni wyposażonym aneksem</li>
+                  <li>✓ Klimatyzacja, pralka, winda, bezobsługowy check-in</li>
+                  <li>✓ Dla pozostałych apartamentów miejski parking podziemny tuż obok</li>
                 </ul>
-                <Link to="/rezerwacja" className="inline-block bg-accent hover:bg-[#b88c45] text-white px-8 py-3 text-xs font-semibold tracking-widest uppercase transition-colors">
-                  Sprawdź dostępność
-                </Link>
+                <div className="flex flex-wrap gap-4 items-center">
+                  <Link to="/rezerwacja" className="inline-block bg-accent hover:bg-[#b88c45] text-white px-8 py-3 text-xs font-semibold tracking-widest uppercase transition-colors rounded shadow-sm">
+                    Rezerwuj pobyt
+                  </Link>
+                  <Link to="/wellness#rezerwacja-sauny" className="inline-block bg-white hover:bg-gray-50 text-foreground border border-gray-300 px-6 py-3 text-xs font-semibold tracking-widest uppercase transition-colors rounded">
+                    Kalendarz Sauny
+                  </Link>
+                </div>
               </div>
             </div>
 

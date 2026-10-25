@@ -19,8 +19,8 @@ const Footer = () => {
               32-600 Oświęcim
             </p>
             <div className="mt-6 space-y-2 text-sm">
-              <p className="text-accent font-medium"><span className="text-foreground mr-2">📱</span>+48 793 942 793</p>
-              <p className="text-accent font-medium"><span className="text-foreground mr-2">✉</span>riversideapartmentsosw@gmail.com</p>
+              <p className="text-accent font-medium"><span className="text-gray-500 mr-2 text-xs uppercase tracking-wider font-semibold">Tel:</span>+48 793 942 793</p>
+              <p className="text-accent font-medium"><span className="text-gray-500 mr-2 text-xs uppercase tracking-wider font-semibold">Email:</span>riversideapartmentsosw@gmail.com</p>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-gray-600">
               <li><Link to="/" className="hover:text-accent transition-colors">Strona Główna</Link></li>
               <li><Link to="/apartamenty" className="hover:text-accent transition-colors">Apartamenty</Link></li>
-              <li><Link to="/wellness" className="hover:text-accent transition-colors">Wellness & Sauna</Link></li>
+              <li><Link to="/wellness" className="hover:text-accent transition-colors">Wellness i Sauna</Link></li>
               <li><Link to="/o-nas" className="hover:text-accent transition-colors">O nas</Link></li>
               <li><Link to="/galeria" className="hover:text-accent transition-colors">Galeria</Link></li>
             </ul>

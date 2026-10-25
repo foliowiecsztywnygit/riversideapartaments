@@ -15,7 +15,7 @@ const Wellness = () => {
   const [guestPhone, setGuestPhone] = useState('');
   const [apartmentInfo, setApartmentInfo] = useState('');
   const [guestsCount, setGuestsCount] = useState('2');
-  const [aroma, setAroma] = useState('Eukaliptus & Mięta');
+  const [aroma, setAroma] = useState('Eukaliptus i Mięta');
   const [notes, setNotes] = useState('');
   const [status, setStatus] = useState(null);
 
@@ -55,12 +55,12 @@ const Wellness = () => {
   return (
     <div>
       <Helmet>
-        <title>Strefa Wellness & Prywatna Sauna | River Side Apartments Oświęcim</title>
+        <title>Strefa Wellness i Prywatna Sauna | River Side Apartments Oświęcim</title>
         <meta name="description" content="Prywatna sauna na wyłączność w River Side Apartments w Oświęcimiu. Zarezerwuj relaksujący seans dla mieszkańców i gości." />
       </Helmet>
 
       <Hero 
-        title="Strefa Wellness & Sauna" 
+        title="Strefa Wellness i Sauna" 
         subtitle="Regeneracja i relaks na wyłączność w sercu Oświęcimia" 
         isHome={false} 
       />
@@ -117,7 +117,7 @@ const Wellness = () => {
           </div>
 
           {/* Right Column: Interactive Booking Calendar / Form */}
-          <div className="lg:col-span-7 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-xl">
+          <div id="rezerwacja-sauny" className="lg:col-span-7 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-xl scroll-mt-28">
             <h3 className="font-serif text-2xl text-foreground mb-2">Zarezerwuj Seans w Saunie</h3>
             <p className="text-xs text-gray-500 mb-8">Wybierz dogodny termin i godzinę. Potwierdzenie otrzymasz SMS-em lub telefonicznie.</p>
 
@@ -237,8 +237,8 @@ const Wellness = () => {
                     onChange={(e) => setAroma(e.target.value)}
                     className="w-full bg-[#FAFAFA] border border-gray-200 px-4 py-3 rounded-lg focus:outline-hidden focus:border-accent text-sm"
                   >
-                    <option value="Eukaliptus & Mięta">Eukaliptus & Mięta (orzeźwienie i drogi oddechowe)</option>
-                    <option value="Sosna & Świerk">Sosna & Świerk leśny (głęboki relaks)</option>
+                    <option value="Eukaliptus i Mięta">Eukaliptus i Mięta (orzeźwienie i drogi oddechowe)</option>
+                    <option value="Sosna i Świerk">Sosna i Świerk leśny (głęboki relaks)</option>
                     <option value="Lawenda">Lawenda (wyciszenie i spokojny sen)</option>
                     <option value="Bez zapachu">Bez zapachu (klasyczna sauna)</option>
                   </select>

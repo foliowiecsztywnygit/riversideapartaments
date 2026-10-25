@@ -7,7 +7,7 @@ const Attractions = () => {
   const mainAttractions = [
     {
       id: 1,
-      name: "Wiślańska Trasa Rowerowa & Velo Soła",
+      name: "Wiślańska Trasa Rowerowa i Velo Soła",
       distance: "50 m (tuż przy obiekcie)",
       desc: "Jedna z najpiękniejszych tras rowerowych w Małopolsce przebiega tuż obok naszych drzwi wzdłuż rzeki Soły. Płaska, asfaltowa nawierzchnia doskonale nadaje się dla rodzin z dziećmi, miłośników rolek i kolarzy.",
       img: "bulwnadsola.jpg",
@@ -111,7 +111,7 @@ const Attractions = () => {
   return (
     <div>
       <Helmet>
-        <title>Atrakcje & Wiślana Trasa Rowerowa | River Side Apartments Oświęcim</title>
+        <title>Atrakcje i Wiślana Trasa Rowerowa | River Side Apartments Oświęcim</title>
         <meta 
           name="description" 
           content="Odkryj Wiślaną Trasę Rowerową, Energylandie, Bulwary nad Sołą i zamek w Oświęcimiu. Zamykana rowerownia na życzenie w River Side Apartments!" 
@@ -119,7 +119,7 @@ const Attractions = () => {
       </Helmet>
 
       <Hero 
-        title="Atrakcje & Okolica" 
+        title="Atrakcje i Okolica" 
         subtitle="Wiślana Trasa Rowerowa, Energylandia i malownicze Bulwary nad Sołą" 
         isHome={false} 
       />
@@ -129,7 +129,7 @@ const Attractions = () => {
           
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="text-accent uppercase tracking-widest text-xs font-bold block mb-2">
-              Lokalizacja & Aktywność
+              Lokalizacja i Aktywność
             </span>
             <h2 className="text-4xl font-serif text-foreground mb-6">Główne punkty w okolicy</h2>
             <p className="text-gray-600 font-light leading-relaxed">
@@ -138,16 +138,13 @@ const Attractions = () => {
           </div>
 
           {/* Bike Room Dedicated Callout Banner */}
-          <div className="mb-20 bg-white rounded-3xl p-8 md:p-12 border-2 border-accent/30 shadow-xl flex flex-col md:flex-row items-center gap-8">
-            <div className="w-20 h-20 rounded-2xl bg-accent/15 text-accent flex items-center justify-center text-4xl flex-shrink-0">
-              🚲
-            </div>
-            <div className="flex-grow text-center md:text-left">
+          <div className="mb-20 bg-white rounded-3xl p-8 md:p-12 border border-accent/30 shadow-xl flex flex-col md:flex-row items-center gap-8 justify-between">
+            <div className="text-center md:text-left">
               <span className="text-accent uppercase tracking-widest text-xs font-bold block mb-1">
                 Dla Miłośników Dwóch Kółek
               </span>
               <h3 className="text-2xl font-serif text-foreground mb-2">
-                Wiślana Trasa Rowerowa tuż obok & Zamykana Rowerownia na życzenie
+                Wiślana Trasa Rowerowa tuż obok oraz zamykana rowerownia na życzenie
               </h3>
               <p className="text-gray-600 font-light text-sm leading-relaxed max-w-2xl">
                 Podróżujesz z rowerem? W River Side Apartments zapewniamy <strong>bezpieczną, zamykaną rowerownię dostępną bezpłatnie na życzenie naszych Gości</strong>. Zaledwie kilkadziesiąt metrów od budynku zaczyna się malownicza <strong>Wiślana Trasa Rowerowa oraz trasa Velo Soła</strong>. Po powrocie z rowerowej wycieczki zrelaksuj się w naszej saunie!
@@ -158,7 +155,7 @@ const Attractions = () => {
                 to="/wellness"
                 className="inline-block bg-accent hover:bg-[#b88c45] text-white px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-widest transition-colors shadow-md text-center"
               >
-                Strefa Saun & Wellness
+                Strefa Wellness i Sauna
               </Link>
             </div>
           </div>

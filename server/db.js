@@ -25,9 +25,9 @@ const db = new sqlite3.Database(dbPath, (err) => {
             db.get("SELECT COUNT(*) AS count FROM cabins", (err, row) => {
                 if (row && row.count === 0) {
                     const stmt = db.prepare("INSERT INTO cabins (name) VALUES (?)");
-                    stmt.run("Domek 1");
-                    stmt.run("Domek 2");
-                    stmt.run("Domek 3");
+                    stmt.run("Apartament 3-osobowy");
+                    stmt.run("Apartament 4-osobowy");
+                    stmt.run("Apartament 6-osobowy Premium");
                     stmt.finalize();
                 }
             });

@@ -148,10 +148,30 @@ const BookingPage = () => {
     : [startParam ? parseISO(startParam) : null, endParam ? parseISO(endParam) : null].filter(Boolean);
 
   const cabinDetails = {
-    1: { img: "IMG_3735.jpg", desc: "Z komfortowym łóżkiem, aneksem kuchennym i łazienką." },
-    2: { img: "IMG_3746.jpg", desc: "Przestronny apartament z częścią wypoczynkową." },
-    3: { img: "IMG_3785-HDR-Edytuj.jpg", desc: "Z widokiem, idealny dla par ceniących wygodę." }
+    1: { 
+      name: "Apartament 3-osobowy", 
+      capacity: "3 osoby",
+      img: "IMG_3785-HDR-Edytuj.jpg", 
+      desc: "Komfortowy apartament z podwójnym łóżkiem i rozkładaną sofą, aneksem kuchennym i łazienką z pralką.",
+      parking: "Miejski parking podziemny tuż obok obiektu"
+    },
+    2: { 
+      name: "Apartament 4-osobowy", 
+      capacity: "4 osoby",
+      img: "IMG_3830-HDR-Edytuj.jpg", 
+      desc: "Przestronny apartament z częścią dzienną, w pełni wyposażonym aneksem kuchennym, łazienką z pralką i klimatyzacją.",
+      parking: "Miejski parking podziemny tuż obok obiektu"
+    },
+    3: { 
+      name: "Apartament 6-osobowy Premium", 
+      capacity: "6 osób • Premium",
+      img: "apartament-6/_DSC2907.jpg", 
+      desc: "Luksusowy apartament typu Premium z dwiema sypialniami, panoramicznym salonem, jadalnią, kuchnią i dedykowanym prywatnym miejscem w garażu.",
+      parking: "Dedykowane prywatne miejsce w parkingu podziemnym budynku"
+    }
   };
+
+  const selectedCabinInfo = selectedCabin ? (cabinDetails[selectedCabin] || { name: availableCabins.find(c => c.id === selectedCabin)?.name || 'Apartament' }) : null;
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] pt-32 pb-20 px-4">
@@ -159,14 +179,30 @@ const BookingPage = () => {
         <SearchBar />
       </div>
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-serif text-foreground mb-2 text-center">Rezerwacja</h1>
-        <p className="text-gray-500 text-center mb-12">
+        <h1 className="text-4xl font-serif text-foreground mb-2 text-center">Rezerwacja Apartamentu</h1>
+        <p className="text-gray-500 text-center mb-8">
           {startParam && endParam ? (
             <>Twój termin: <span className="text-foreground font-medium">{displayDate(startParam)} - {displayDate(endParam)}</span> dla {guestsParam} osób.</>
           ) : (
-            "Wybierz termin aby sprawdzić dostępność."
+            "Wybierz termin z kalendarza, aby sprawdzić dostępność apartamentów."
           )}
         </p>
+
+        {/* Wellness i Sauna Quick Access Banner */}
+        <div className="mb-12 bg-white rounded-2xl p-6 border border-amber-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <h3 className="font-serif text-lg text-foreground font-medium">Strefa Wellness i Rezerwacja Sauny</h3>
+            <p className="text-xs text-gray-500 mt-0.5">
+              Prywatna sauna dla mieszkańców i gości River Side. Dostępny wygodny kalendarz rezerwacji seansów.
+            </p>
+          </div>
+          <a 
+            href="/wellness#rezerwacja-sauny" 
+            className="px-5 py-2.5 bg-foreground hover:bg-accent text-white text-xs font-bold uppercase tracking-widest rounded-lg transition-colors whitespace-nowrap shadow-sm"
+          >
+            Rezerwuj Saunę →
+          </a>
+        </div>
 
         {!loading && (
           <div className="mb-16 bg-white p-8 rounded-xl shadow-xl border border-gray-100">
@@ -203,14 +239,18 @@ const BookingPage = () => {
         ) : submitStatus === 'success' ? (
            <div className="bg-white border border-gray-200 shadow-xl p-8 rounded-xl text-center">
              <h2 className="text-2xl text-accent mb-4 font-serif">Dziękujemy!</h2>
-             <p className="text-gray-600">Twoje zapytanie zostało wysłane. Skontaktujemy się z Tobą wkrótce.</p>
+             <p className="text-gray-600">Twoje zapytanie rezerwacyjne zostało wysłane. Skontaktujemy się z Tobą wkrótce z potwierdzeniem.</p>
            </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             
-            {/* Cabins Selection */}
+            {/* Cabins / Apartments Selection */}
             <div>
-              <h2 className="text-2xl font-serif text-foreground mb-6">Dostępne apartamenty</h2>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-serif text-foreground">Wybierz apartament</h2>
+                <span className="text-xs text-gray-500">15 niezależnych lokali</span>
+              </div>
+
               {availableCabins.length === 0 ? (
                 <div className="bg-red-50 border border-red-200 p-6 rounded-xl text-red-800">
                   Niestety w wybranym terminie nie mamy wolnych apartamentów. Spróbuj wybrać inny termin powyżej.
@@ -218,28 +258,53 @@ const BookingPage = () => {
               ) : (
                 <div className="space-y-4">
                   {availableCabins.map(cabin => {
-                    const details = cabinDetails[cabin.id] || { img: "wnetrze-13.webp", desc: "Komfortowy domek w Osadzie Dzianisz." };
+                    const details = cabinDetails[cabin.id] || { 
+                      name: cabin.name,
+                      capacity: "3-4 osoby",
+                      img: "IMG_3785-HDR-Edytuj.jpg", 
+                      desc: "Nowoczesny apartament z klimatyzacją, aneksem kuchennym i łazienką z pralką.",
+                      parking: "Miejski parking podziemny tuż obok"
+                    };
+                    const isSelected = selectedCabin === cabin.id;
+
                     return (
                     <div 
                       key={cabin.id} 
                       onClick={() => setSelectedCabin(cabin.id)}
-                      className={`p-0 rounded-xl border cursor-pointer overflow-hidden transition-all flex flex-col sm:flex-row h-full sm:h-40 ${
-                        selectedCabin === cabin.id 
-                        ? 'border-accent bg-accent/5 ring-1 ring-accent' 
+                      className={`p-0 rounded-xl border cursor-pointer overflow-hidden transition-all flex flex-col sm:flex-row ${
+                        isSelected 
+                        ? 'border-accent bg-accent/5 ring-2 ring-accent shadow-md' 
                         : 'border-gray-200 bg-white hover:border-gray-300'
                       }`}
                     >
-                      <div className="sm:w-1/3 h-48 sm:h-auto overflow-hidden">
-                        <img src={`/assets/images/${details.img}`} alt={cabin.name} className="w-full h-full object-cover" />
+                      <div className="sm:w-2/5 h-48 sm:h-auto overflow-hidden relative">
+                        <img src={`/assets/images/${details.img}`} alt={details.name} className="w-full h-full object-cover" />
+                        <span className="absolute top-2 left-2 bg-black/70 backdrop-blur-sm text-white text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded">
+                          {details.capacity}
+                        </span>
                       </div>
-                      <div className="p-4 sm:w-2/3 flex flex-col justify-center">
-                        <h3 className="text-xl text-foreground font-serif font-medium mb-1">{cabin.name.replace('Domek', 'Apartament')}</h3>
-                        <p className="text-gray-500 text-xs font-light mb-2">{details.desc}</p>
-                        <ul className="text-[11px] text-gray-500 space-y-1 mt-auto">
-                          <li>• Prywatna łazienka</li>
-                          <li>• Klimatyzacja, Wi-Fi</li>
-                          <li>• Telewizor z płaskim ekranem</li>
-                        </ul>
+                      <div className="p-4 sm:w-3/5 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between mb-1">
+                            <h3 className="text-lg text-foreground font-serif font-medium">{details.name}</h3>
+                            {isSelected && <span className="text-accent text-xs font-bold">✓ Wybrano</span>}
+                          </div>
+                          <p className="text-gray-500 text-xs font-light mb-3">{details.desc}</p>
+                          <div className="mb-3 inline-block bg-gray-50 border border-gray-100 px-2 py-1 rounded text-[11px] text-gray-700">
+                            Parking: {details.parking}
+                          </div>
+                        </div>
+
+                        <div className="pt-2 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
+                          <span>Klimatyzacja • Pralka • Winda</span>
+                          <a 
+                            href="/wellness#rezerwacja-sauny" 
+                            onClick={(e) => e.stopPropagation()} 
+                            className="text-accent hover:underline font-medium"
+                          >
+                            + Sauna
+                          </a>
+                        </div>
                       </div>
                     </div>
                   )})}
@@ -250,15 +315,25 @@ const BookingPage = () => {
             {/* Inquiry Form */}
             <div>
               <div className="bg-white border border-gray-200 shadow-xl p-8 rounded-xl sticky top-24">
-                <h2 className="text-2xl font-serif text-foreground mb-6">Wyślij zapytanie</h2>
+                <h2 className="text-2xl font-serif text-foreground mb-4">Wyślij zapytanie</h2>
                 
+                {selectedCabinInfo && (
+                  <div className="mb-6 p-3 bg-accent/10 border border-accent/20 rounded-lg flex items-center justify-between">
+                    <div>
+                      <span className="text-[11px] uppercase tracking-wider text-accent font-bold block">Wybrany wariant:</span>
+                      <span className="text-sm font-serif font-medium text-foreground">{selectedCabinInfo.name}</span>
+                    </div>
+                    <span className="text-xs text-gray-500">{startParam && endParam ? `${displayDate(startParam)} - ${displayDate(endParam)}` : 'Wybierz termin'}</span>
+                  </div>
+                )}
+
                 {/* Mobile SMS Quick Action */}
                 <div className="block md:hidden">
                    <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                      Jesteś na smartfonie? Najszybsza rezerwacja odbywa się przez SMS. Przygotowaliśmy dla Ciebie gotową wiadomość z terminem!
                    </p>
                    <a 
-                     href={`sms:+48793942793?body=${encodeURIComponent(`Dzień dobry, chciał(a)bym zarezerwować ${selectedCabin ? `Apartament N°${selectedCabin}` : 'apartament'} w terminie od ${displayDate(startParam)} do ${displayDate(endParam)} dla ${guestCount} osób (w tym ${childrenUnder3} dzieci do 3 lat, ${childrenOver3} dzieci pow. 3 lat). Czy termin jest nadal aktualny?`)}`}
+                     href={`sms:+48793942793?body=${encodeURIComponent(`Dzień dobry, chciał(a)bym zarezerwować ${selectedCabinInfo ? selectedCabinInfo.name : 'apartament w River Side'} w terminie od ${displayDate(startParam)} do ${displayDate(endParam)} dla ${guestCount} osób (w tym ${childrenUnder3} dzieci do 3 lat, ${childrenOver3} dzieci pow. 3 lat). Czy termin jest dostępny?`)}`}
                      className={`w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg transition-colors text-sm uppercase tracking-widest ${!selectedCabin ? 'opacity-50 pointer-events-none' : ''}`}
                    >
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -284,30 +359,36 @@ const BookingPage = () => {
                   
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-gray-500 text-sm mb-1">Liczba osób (1-14)</label>
-                      <input required type="number" min="1" max="14" value={guestCount} onChange={e => setGuestCount(e.target.value)} className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-accent" />
+                      <label className="block text-gray-500 text-sm mb-1">Liczba osób</label>
+                      <input required type="number" min="1" max="6" value={guestCount} onChange={e => setGuestCount(e.target.value)} className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-accent" />
                     </div>
                     <div>
-                      <label className="block text-gray-500 text-sm mb-1">Dzieci (do 3 lat)</label>
+                      <label className="block text-gray-500 text-sm mb-1">
+                        Dzieci do 3 lat
+                        <span className="block text-[10px] text-accent font-semibold">GRATIS</span>
+                      </label>
                       <input required type="number" min="0" value={childrenUnder3} onChange={e => setChildrenUnder3(e.target.value)} className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-accent" />
                     </div>
                     <div>
-                      <label className="block text-gray-500 text-sm mb-1">Dzieci (pow. 3 lat)</label>
+                      <label className="block text-gray-500 text-sm mb-1">Dzieci pow. 3 lat</label>
                       <input required type="number" min="0" value={childrenOver3} onChange={e => setChildrenOver3(e.target.value)} className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-accent" />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-gray-500 text-sm mb-1">Wiadomość (opcjonalnie)</label>
-                    <textarea value={message} onChange={e => setMessage(e.target.value)} rows={3} className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-accent" />
+                    <label className="block text-gray-500 text-sm mb-1">Wiadomość / Życzenia (np. rowerownia, pobyt ze zwierzęciem)</label>
+                    <textarea value={message} onChange={e => setMessage(e.target.value)} rows={3} placeholder="Dodatkowe pytania lub życzenia..." className="w-full bg-gray-50 border border-gray-200 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-accent" />
                   </div>
                   <button 
                     disabled={!selectedCabin || submitStatus === 'sending'}
                     type="submit" 
-                    className="w-full bg-accent hover:bg-[#b88c45] disabled:opacity-50 text-white font-bold py-4 rounded-lg transition-colors mt-4 text-sm uppercase tracking-widest"
+                    className="w-full bg-accent hover:bg-[#b88c45] disabled:opacity-50 text-white font-bold py-4 rounded-lg transition-colors mt-4 text-sm uppercase tracking-widest cursor-pointer"
                   >
                     {submitStatus === 'sending' ? 'Wysyłanie...' : 'Wyślij zapytanie o rezerwację'}
                   </button>
+                  <p className="text-[11px] text-gray-400 text-center mt-2">
+                    Bezobsługowy check-in od 15:00 (skrytki na kod) • Check-out do 10:00
+                  </p>
                 </form>
               </div>
             </div>

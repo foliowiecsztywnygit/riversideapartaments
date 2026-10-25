@@ -141,12 +141,12 @@ const Home = () => {
             <div className="bg-white rounded-2xl shadow-lg border-2 border-accent/40 group overflow-hidden flex flex-col h-full hover:shadow-2xl transition-all duration-300 relative">
               <div className="relative h-64 overflow-hidden">
                 <img 
-                  src="/assets/images/IMG_3993-Edytuj.jpg" 
+                  src="/assets/images/apartament-6/_DSC2907.jpg" 
                   alt="Apartament 6-osobowy Premium" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute top-4 left-4 bg-black/80 text-accent border border-accent/40 px-3 py-1 text-xs font-bold uppercase tracking-widest rounded">
-                  ★ PREMIUM
+                  PREMIUM
                 </div>
                 <div className="absolute top-4 right-4 bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded shadow">
                   6 OSOBOWY
@@ -178,13 +178,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Wellness & Sauna Highlight Banner */}
+      {/* Wellness i Sauna Highlight Banner */}
       <section className="py-20 bg-[#0F1416] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-black/80 via-black/60 to-black/80 border border-white/10 rounded-3xl p-8 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-accent text-xs uppercase tracking-widest font-bold block mb-2">Relaks & Regeneracja</span>
-              <h2 className="text-3xl md:text-4xl font-serif mb-4">Strefa Wellness & Prywatna Sauna</h2>
+              <span className="text-accent text-xs uppercase tracking-widest font-bold block mb-2">Relaks i regeneracja</span>
+              <h2 className="text-3xl md:text-4xl font-serif mb-4">Strefa Wellness i Prywatna Sauna</h2>
               <p className="text-gray-300 font-light leading-relaxed mb-6">
                 Zarezerwuj relaksujący seans w naszej saunie na wyłączność. Idealny sposób na odprężenie po dniu pełnym wrażeń na Bulwarach nad Sołą lub w Energylandii.
               </p>
